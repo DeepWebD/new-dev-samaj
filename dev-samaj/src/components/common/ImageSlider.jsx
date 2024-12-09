@@ -8,8 +8,7 @@ import image4 from "../../assets/image4.jpg";
 
 const images = [image1, image2, image3, image4];
 export default function ImageSlider() {
-  let width = "400px";
-  let height = "400px";
+
   var settings = {
     dots: true,
     infinite: true,
@@ -21,18 +20,18 @@ export default function ImageSlider() {
     cssEase: "linear"
   };
   return (
-    <div className={`md:h-[400px] md:w-[350px] w-full`}>
+    <div className={` w-full h-full lg:h-[400px] lg:w-[350px]`}>
       <Slider {...settings}>
         <div>
           <img
-            className={`md:h-[400px] md:w-[350px] w-full h-[35px] flex justify-center items-center border rounded-lg object-cover`}
+            className={` w-full h-[350px] lg:h-[400px] lg:w-[350px] flex justify-center items-center border rounded-lg object-cover`}
             src={image1}
             alt=""
           />
         </div>
         <div>
           <img
-            className={`md:h-[400px] md:w-[350px] w-full h-[350px] flex justify-center items-center border rounded-lg object-cover`}
+            className={` w-full h-[350px] lg:h-[400px] lg:w-[350px]  flex justify-center items-center border rounded-lg object-cover`}
             src={image2}
             alt=""
           />
@@ -40,7 +39,7 @@ export default function ImageSlider() {
         </div>
         <div>
           <img
-            className={`md:h-[400px] md:w-[350px] w-full h-[350px] flex justify-center items-center border rounded-lg object-cover`}
+            className={` w-full h-[350px] lg:h-[400px] lg:w-[350px]  flex justify-center items-center border rounded-lg object-cover`}
             src={image3}
             alt=""
           />

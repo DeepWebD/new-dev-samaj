@@ -1,14 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Oswald:wght@200..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer components{
     .primary-btn{
-        @apply bg-primary font-semibold px-6 py-3 rounded-full
+        @apply bg-primary font-semibold text-white px-6 py-3 rounded-full
         hover:!scale-110 hover:shadow-xl duration-300;
     }
 }
 body{
-    font-family: "Poppins", sans-serif;
+    font-family: "Playfair Display", serif;
 }
+
+.carouselHeading{
+    font-family: "Playfair Display", serif;
+}
+
+/* Crausel Slider */
+.slider-container .slick-slide img{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+
+.slider-container .slick-dots{
+    bottom: 25px;
+    z-index: 10;
+}
+
+
+.slider-container .slick-dots li{
+    width: 100px;
+    height: 150px;
+}
+.slider-container .slick-dots li.slick-active img{
+
+    border: 2px solid rgb(0, 221, 255);
+}
+
+.slider-container .slick-dots img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #fff;
+  
+   
+}
+.slider-container .slick-prev{
+   left: 15px;
+   z-index: 10;
+}
+.slider-container .slick-next{
+    right: 15px;
+    z-index: 10;
+ }
+
+@media (max-width: 767px){
+    .slider-container .slick-dots li{
+        width: 75px;
+        height: 100px;
+    }
+}
+
+.shadow-b {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }

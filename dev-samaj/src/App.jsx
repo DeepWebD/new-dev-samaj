@@ -15,6 +15,8 @@ import Teachers from './components/Teachers/Teachers';
 import ContactUs from './components/ContactUs/ContactUs';
 import ImageSlider from './components/common/ImageSlider';
 import VideoPlayer from './components/common/VideoPlayer';
+import Carousel from './components/Header/Carousel/Carousel'
+import Prayer from './components/Prayer/Prayer'
 
 const BannerData = {
   image: Img1,
@@ -37,15 +39,16 @@ const BannerData2 = {
 const App = () => {
   return (
     <main className='overflow-x-hidden'>
-      
-      <Navbar />
+      <Carousel />
+      {/* <Navbar />
       <NavbarBanner />
-      <VideoBg />
-      <NumberCounter />
+      <VideoBg /> */}
+      {/* <NumberCounter /> */}
       <Hero />
       <WhyChooseUs />
       <Banner {...BannerData} />
       <Banner {...BannerData2} reverse={true} />
+      <Prayer />
       {/* <SubjectCard /> */}
       <Teachers />
       <ContactUs />
@@ -55,5 +58,7 @@ const App = () => {
     </main>
   )
 }
+
+
 
 export default App

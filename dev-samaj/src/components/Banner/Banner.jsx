@@ -7,12 +7,12 @@ import VideoPlayer from "../common/VideoPlayer";
 const Banner = ({ image, title, subtitle, link, tag, reverse }) => {
   return (
     // <div>Banner</div>
-    <div className="bg-[#f9f9f9] pb-14">
+    <div className="bg-sky-100 p-14">
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 space-y-6 md:space-y-0">
           {/* banner Image section */}
           <div
-            className={`flex justify-start items-center ${
+            className={`flex justify-start items-center  ${
               reverse && "md:order-last md:justify-end"
             }`}
           > 
@@ -33,23 +33,23 @@ const Banner = ({ image, title, subtitle, link, tag, reverse }) => {
               variants={SlideUp(0.5)}
               initial="hidden"
               whileInView={"visible"}
-              className="text-sm text-orange-600 font-semibold capitalize"
+              className="text-5xl lg:text-7xl text-secondary font-semibold capitalize"
             >
               {tag}
             </motion.p>
-            <motion.p
+            {/* <motion.p
               variants={SlideUp(0.7)}
               initial="hidden"
               whileInView={"visible"}
               className="text-xl lg:text-2xl font-semibold capitalize "
             >
               {title}
-            </motion.p>
+            </motion.p> */}
             <motion.p
               variants={SlideUp(0.9)}
               initial="hidden"
               whileInView={"visible"}
-              className="text-sm text-slate-500"
+              className="text-lg font-extralight text-slate-500"
             >
               {subtitle}
             </motion.p>
