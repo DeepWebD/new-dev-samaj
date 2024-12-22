@@ -51,7 +51,10 @@ const App = () => {
       <Prayer />
       {/* <SubjectCard /> */}
       <Teachers />
+      <section id='contact'>
       <ContactUs />
+      </section>
+     
        {/* <VideoPlayer /> */}
       <Testimonial />
       <Footer />

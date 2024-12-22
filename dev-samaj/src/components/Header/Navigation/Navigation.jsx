@@ -102,7 +102,7 @@ const Navigation = () => {
       <nav
         className={`fixed top-0 w-full z-20 transition-colors duration-300 ${shadow} ${navbarBg}`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`flex items-center justify-between ${navHeight}`}>
             <div className="flex items-center">
               <div>
@@ -150,6 +150,12 @@ const Navigation = () => {
                     </a>
                   );
                 })}
+                <a
+                  href="#contact"
+                  className={`${navTetxColor} hover:text-orange-400 px-3 py-2 rounded-md text-lg font-medium `}
+                >
+                  Contact
+                </a>
                 <a
                   href="#"
                   className={`${navTetxColor} hover:text-orange-400 py-1 px-10 border rounded-[25px] text-lg font-medium `}

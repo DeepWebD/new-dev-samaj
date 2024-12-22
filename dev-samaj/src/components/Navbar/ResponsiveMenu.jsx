@@ -19,7 +19,7 @@ const ResponsiveMenu = (props) => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -100 }}
           transition={{ duration: 0.3 }}
-          className="fixed top-10 left-0 w-full z-20 lg:hidden"
+          className="fixed top-20 left-0 w-full z-20 lg:hidden"
         >
           <div className=" bg-secondary h-screen text-white py-5  ">
             <ul className="flex flex-col justify-center items-center gap-10 ">

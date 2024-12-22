@@ -33,7 +33,7 @@ const Banner = ({ image, title, subtitle, link, tag, reverse }) => {
               variants={SlideUp(0.5)}
               initial="hidden"
               whileInView={"visible"}
-              className="text-5xl lg:text-7xl text-secondary font-semibold capitalize"
+              className="text-5xl lg:text-6xl text-secondary font-semibold capitalize"
             >
               {tag}
             </motion.p>

@@ -62,14 +62,14 @@ const WhyChooseUs = () => {
       {/* Why Choose Us Section */}
       <div className="grid grid-cols-1 lg:grid-cols-4 ">
         <div className="col-span-1 lg:col-span-4 bg-secondary ">
-          <div className="flex flex-col lg:flex-row">
+          <div className="flex flex-col lg:flex-row mx-auto my-0 w-full lg:w-[70%]">
            {/* Image Section */}
            <div className="w-full lg:w-1/2 flex justify-center items-center">
               <img src={Principle} alt="Principle" className="h-full object-cover" />
            </div>
            {/* Text Section */}
            <div className="w-full lg:w-1/2 flex flex-col gap-4 justify-center text-white px-20 py-10">
-             <h2 className="text-5xl lg:text-7xl font-bold">Words of Our Visionary </h2>
+             <h2 className="text-4xl lg:text-6xl font-semibold">Words of Our Visionary </h2>
              <p className="font-light text-lg">We live in a time where our educational system desperately needs to put more stress on inculcating universal values, such as empathy, service-mindedness, true love and compassion in our youngsters. We need educational institutions which actively spread these universal, spiritual values.</p>
              <p> - Principal</p>
            </div>
@@ -86,8 +86,8 @@ const WhyChooseUs = () => {
         </div>
         <div className="col-span-1 lg:col-span-2 bg-white">
           <div className="h-[300px] flex flex-col justify-center items-center lg:items-end p-5  gap-2">
-            <h2 className="text-5xl lg:text-7xl font-bold text-secondary">Why Choose Us</h2>
-            <p className="text-black text-lg font-extralight w-full lg:w-[70%] lg:text-right">Our mission is to provide a safe, nurturing environment where children can learn and grow through a variety of experiences.</p>
+            <h2 className="text-4xl lg:text-6xl font-bold text-secondary">Why Choose Us</h2>
+            <p className="text-black text-lg font-extralight w-full md:w-[70%] lg:text-right">Our mission is to provide a safe, nurturing environment where children can learn and grow through a variety of experiences.</p>
           </div>
         </div>
         <div className=" bg-secondary ">
@@ -118,7 +118,7 @@ export default WhyChooseUs;
 {/* <div className="container py-24">
 
 <div className="space-y-4 p-6 text-center max-w-[700px] mx-auto mb-5">
-  <h1 className="font-semibold text-secondary text-4xl lg:text-7xl">
+  <h1 className="font-semibold text-secondary text-4xl lg:text-6xl">
     Benefits of Choosing
     <span className="text-primary"> Dev Samaj School </span>
   </h1>

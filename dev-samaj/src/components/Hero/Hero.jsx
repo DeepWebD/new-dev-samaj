@@ -29,7 +29,7 @@ const Hero = () => {
             >
               Acquire Knowledge and Form Character
             </motion.p> */}
-            <h1 className="text-4xl lg:text-7xl  font-bold !leading-tight text-secondary">
+            <h1 className="text-4xl lg:text-6xl  font-bold !leading-tight text-secondary">
               {/* <span className="text-primary">Welome</span> */}
               <span>Welome To Dev Samaj Sachool</span>
             </h1>
