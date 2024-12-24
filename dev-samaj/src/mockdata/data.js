@@ -1,3 +1,4 @@
+import { title } from "framer-motion/client";
 import Teacher1 from "../assets/teachers/teacher1.jpeg";
 import Teacher2 from "../assets/teachers/teacher2.jpg";
 import Teacher3 from "../assets/teachers/teacher3.jpg";
@@ -38,12 +39,36 @@ export const NavbarMenu = [
 ];
 
 export const TeacherData = [
-  { id: 1, name: "Sunit Verma", subject: "Mathematics", image: Teacher1 , delay: 0.2},
-  { id: 2, name: "Soniya Roy", subject: "Physcis", image: Teacher2, delay: 0.3 },
-  { id: 3, name: "Anshika Soni", subject: "Hindi", image: Teacher3, delay: 0.4 },
-  { id: 4, name: "Suman Sumitra", subject: "English", image: Teacher4, delay: 0.5 },
-  { id: 5, name: "Pavitra Ghos", subject: "Sanskrit", image: Teacher5, delay: 0.6 },
-  { id: 6, name: "Shivangi Sinha", subject: "Socail Science", image: Teacher6, delay: 0.7 },
-  { id: 7, name: "Mr. John Doe", subject: "Mathematics", image: Teacher7, delay: 0.8 },
- 
+  {
+    id: 1,
+    name: "Sunit Verma",
+    title: "Director",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNypIVCsENGCkdbXK5lERZo9jJlEp2W3mtSQ&s ",
+    delay: 0.2,
+  },
+  {
+    id: 2,
+    name: "Soniya Roy",
+    title: "Principal",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxx1KtOIz2eXv2PL80wYBoGhbV9W2q6CxNng&s",
+    delay: 0.3,
+  },
+  {
+    id: 3,
+    name: "Anshika Soni",
+    title: "Vice-principal",
+    image:
+      "https://ohsobserver.com/wp-content/uploads/2017/09/DrHendrickson-800x1200.jpg",
+    delay: 0.4,
+  },
+  {
+    id: 4,
+    name: "Suman Sumitra",
+    title: "Founder",
+    image:
+      "https://img.freepik.com/premium-photo/mid-adult-teacher-poses-portrait-classroom-mid-adult-female-teacher-poses-photo-he_629685-93450.jpg?semt=ais_hybrid",
+    delay: 0.5,
+  },
 ];

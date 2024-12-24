@@ -127,7 +127,7 @@ const Navigation = () => {
                       <MdKeyboardArrowRight style={{display:showLocationCard?'block':'none'}} className="text-lg transition-all duration-500" />
                       <MdKeyboardArrowDown  style={{display:!showLocationCard?'block':'none'}} className="text-lg transition-all duration-500"/>
                     </span>
-                    <div onClick={(e) => changeSchool(e)} style={{display:showLocationCard?'flex':'none'}} className="absolute w-44 h-36 bg-white shadow-lg shadow-secondary  top-5 left-5 flex-col justify-center items-center gap-4 text-lg">
+                    <div onClick={(e) => changeSchool(e)} style={{display:showLocationCard?'flex':'none'}} className="absolute w-44 h-36 bg-white shadow-lg shadow-secondary  top-5 left-5 flex-col justify-center items-center gap-4 text-lg z-40">
                       <a id="nehruNagar" href="#" className="text-secondary hover:text-primary">Nehru Nagar</a>
                       <a id="sukhdevNagar" href="#" className="text-secondary hover:text-primary">Sukhdev Nagar</a>
                     </div>
