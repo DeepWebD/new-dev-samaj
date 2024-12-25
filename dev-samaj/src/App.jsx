@@ -11,12 +11,13 @@ import SubjectCard from './components/SubjectCard/SubjectCard';
 import Testimonial from './components/Testimonial/Testimonial'
 import Footer from './components/Footer/Footer'
 import VideoBg from './components/VideoBg/VideoBg'
-import Teachers from './components/Teachers/Teachers';
 import ContactUs from './components/ContactUs/ContactUs';
 import ImageSlider from './components/common/ImageSlider';
 import VideoPlayer from './components/common/VideoPlayer';
 import Carousel from './components/Header/Carousel/Carousel'
 import Prayer from './components/Prayer/Prayer'
+import Leaders from './components/Teachers/Leaders';
+import Teachers from './components/Teachers/Teachers';
 
 const BannerData = {
   image: Img1,
@@ -50,7 +51,8 @@ const App = () => {
       <Banner {...BannerData2} reverse={true} />
       <Prayer />
       {/* <SubjectCard /> */}
-      <Teachers />
+      <Leaders />
+      < Teachers />
       <section id='contact'>
       <ContactUs />
       </section>

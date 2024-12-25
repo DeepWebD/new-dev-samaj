@@ -1,24 +1,23 @@
 
 import { motion } from "framer-motion";
+import LeaderCard from './LeaderCard'
 import { TeacherData } from "../../mockdata/data";
 
 
 
-const Teachers = () => {
+const Leaders = () => {
   return (
     <>
+    {/* <TeacherCard /> */}
       <div className="container py-14 md:py-24">
         {/* header section */}
         <div className="space-y-4 p-6 text-center max-w-[600px] mx-auto mb-5">
-          <h1 className="uppercase font-semibold text-gray-300">
-            Other View
-          </h1>
           <p className="font-semibold text-3xl">
             Meet Our <span className="text-primary">Leaders</span>
           </p>
         </div>
         {/* cards section */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 ">
+        <div className="flex flex-wrap justify-center gap-6 ">
           {TeacherData.map((teacher) => {
             return (
               <motion.div
@@ -30,9 +29,11 @@ const Teachers = () => {
                   stiffness: 100,
                   delay: teacher.delay,
                 }}
-                className=" border-secondary/20  flex flex-col justify-start items-center gap-4 h"
+                className="flex justify-center"
               >
-                <div className="relative hover:!scale-105 hover:!shadow-xl duration-200 cursor-pointer">
+
+                <LeaderCard teacher = {teacher}/>
+                {/* <div className="relative hover:!scale-105 hover:!shadow-xl duration-200 cursor-pointer">
                   <img
                     src={teacher.image}
                     className=" h-[300px] w-[250px] object-cover border rounded-lg "
@@ -44,7 +45,7 @@ const Teachers = () => {
                       <p className="text-sm ">{teacher.subject}</p>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </motion.div>
             );
           })}
@@ -54,4 +55,4 @@ const Teachers = () => {
   );
 };
 
-export default Teachers;
+export default Leaders;

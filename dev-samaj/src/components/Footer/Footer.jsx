@@ -13,11 +13,12 @@ const FooterBg = {
 };
 
 const Footer = () => {
+  // style={FooterBg} 
   return (
-    <div style={FooterBg} className="rounded-t-3xl">
-      <div className="bg-primary/5">
+    <div className="rounded-t-3xl">
+      <div className="bg-secondary text-gray-100">
         <div className="container">
-          <div className="grid md:grid-cols-4 md:gap-4 py-5 border-t-2 border-gray-300/10 text-black">
+          <div className="grid md:grid-cols-4 md:gap-4 py-5 border-t-2 border-gray-300/10 text-gray-100">
             {/* brand info section */}
             <div className="py-8 px-4 space-y-4">
               <div className="text-2xl flex items-center gap-2 font-bold uppercase">
@@ -133,7 +134,7 @@ const Footer = () => {
           {/* copyright section  */}
           <div className="mt-8">
             <div className="text-center py-6 border-t-2 border-gray-800/10">
-              <span className="text-sm text-black/60">
+              <span className="text-sm bg- text-gray-100">
                 {" "}
                 @copyright 2024 Dev Samaj School
               </span>
