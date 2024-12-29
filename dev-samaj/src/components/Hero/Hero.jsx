@@ -31,7 +31,7 @@ const Hero = () => {
             </motion.p> */}
             <h1 className="text-4xl lg:text-6xl  font-bold !leading-tight text-secondary">
               {/* <span className="text-primary">Welome</span> */}
-              <span>Welome To Dev Samaj Sachool</span>
+              <span>Welome To Dev Samaj School</span>
             </h1>
             <p className="font-light text-lg">
               An English medium school in Nehru Nagar, Delhi, that was
