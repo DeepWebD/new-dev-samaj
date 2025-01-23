@@ -9,18 +9,38 @@ import { GrLocation } from "react-icons/gr";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
 const Navigation = () => {
-  const [navbarBg, setNavbarBg] = useState("bg-secondary lg:bg-transparent");
-  const [navHeight, setNavHeight] = useState("h-[80px] lg:h-[160px]");
-  const [imgHeight, setImgHeight] = useState("h-16 lg:h-28");
-  const [imgWidth, setImgWidth] = useState("w-16 lg:w-28");
-  const [navTetxColor, setNavTextColor] = useState("text-white");
+  const [navConfig, setNavConfig] = useState({
+    navbarBg: "bg-[#0A3981]",
+    navHeight: "h-[80px]",
+    imgHeight: "h-[80px]",
+    imgWidth: "w-16",
+    navTetxColor: "text-white",
+    shadow: "shadow-b",
+  });
+
   const [subNavbarData, setSubNavbarData] = useState([]);
   const [showCard, setShowCard] = useState(false);
-  const [shadow, setShadow] = useState("shadow-none");
   const navbarCardRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [location, setLocation] = useState('nehruNagar');
+  const [location, setLocation] = useState("nehruNagar");
   const [showLocationCard, setShowLocationCard] = useState(false);
+  const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
+  console.log("Windows URL 1", currentUrl);
+  useEffect(() => {
+    console.log("Windows URL 2", currentUrl);
+    // if (currentUrl !== "/") {
+    //   setShowCard(false);
+    //   setNavConfig({
+    //     ...navConfig,
+    //     navbarBg: "bg-[#0A3981]",
+    //     navHeight: "h-[80px]",
+    //     imgHeight: "h-[80px]",
+    //     imgWidth: "w-16",
+    //     navTetxColor: "text-white",
+    //     shadow: "shadow-b",
+    //   });
+    // }
+  }, []);
   /**
    * Handles the hover event on the navigation items.
    * Sets the showCard state to true and updates the subNavbarData state if applicable.
@@ -41,31 +61,37 @@ const Navigation = () => {
   /**
    * Handles the scroll event and updates the navbar styles based on the scroll position.
    */
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setNavbarBg("bg-[#0A3981]");
-      setNavHeight("h-[80px]");
-      setImgHeight("h-16");
-      setImgWidth("w-16");
-      setNavTextColor("text-white");
-      setShadow("shadow-b");
-    } else {
-      setNavbarBg("bg-secondary lg:bg-transparent");
-      setNavHeight("h-[80px] lg:h-[160px]");
-      setImgHeight("h-16 lg:h-28");
-      setImgWidth("w-16 lg:w-28");
-      setNavTextColor("text-white");
-      setShadow("shadow-none");
-    }
-  };
+  // const handleScroll = () => {
+  //   console.log(window.scrollY);
+  //   if (window.scrollY > 50) {
+  //     setNavConfig({
+  //       ...navConfig,
+  //       navbarBg: "bg-[#0A3981]",
+  //       navHeight: "h-[80px]",
+  //       imgHeight: "h-[80px]",
+  //       imgWidth: "w-16",
+  //       navTetxColor: "text-white",
+  //       shadow: "shadow-b",
+  //     });
+  //   } else if (window.scrollY < 50) {
+  //     setNavConfig({
+  //       navbarBg: "bg-secondary lg:bg-transparent",
+  //       navHeight: "h-[80px] lg:h-[160px]",
+  //       imgHeight: "h-16 lg:h-28",
+  //       imgWidth: "w-16 lg:w-28",
+  //       navTetxColor: "text-white",
+  //       shadow: "shadow-none",
+  //     });
+  //   }
+  // };
 
   // eslint-disable-next-line no-undef
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const handleClickOutside = (event) => {
     if (
@@ -85,34 +111,39 @@ const Navigation = () => {
   }, []);
 
   const changeSchool = (e) => {
-    console.log(e.target.id);
     e.preventDefault();
-    
+
     setLocation(e.target.id);
     setShowLocationCard(!showLocationCard);
   };
 
+  const handleNavCardMouseLeave = () => {
+    setShowCard(false);
+    setSubNavbarData([]);
+  };
 
   return (
     <>
-      <div ref={navbarCardRef}>
+      <div ref={navbarCardRef} onMouseLeave={handleNavCardMouseLeave}>
         <Navcard showCard={showCard} subNavbarData={subNavbarData} />
       </div>
 
       <nav
-        className={`fixed top-0 w-full z-20 transition-colors duration-300 ${shadow} ${navbarBg}`}
+        className={`fixed top-0 w-full z-20 transition-colors duration-300 ${navConfig.shadow} ${navConfig.navbarBg}`}
       >
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`flex items-center justify-between ${navHeight}`}>
+          <div
+            className={`flex items-center justify-between ${navConfig.navHeight}`}
+          >
             <div className="flex items-center">
               <div>
                 <img
-                  className={`${imgHeight} ${imgWidth} transition-all duration-300 `}
+                  className={`${navConfig.imgHeight} ${navConfig.imgWidth} transition-all duration-300 `}
                   src={Logo}
                   alt="Logo"
                 />
               </div>
-              <div className={`flex flex-col ${navTetxColor}`}>
+              <div className={`flex flex-col ${navConfig.navTetxColor}`}>
                 <div className="text-xl font-bold">DEV SAMAJ SCHOOL</div>
                 <div className="text-sm font-light flex justify-start items-center gap-2">
                   <GrLocation />
@@ -120,16 +151,41 @@ const Navigation = () => {
                   <a
                     href="#"
                     className="relative flex justify-center items-center text-primary"
-                    onClick={()=>setShowLocationCard(!showLocationCard)}
+                    onClick={() => setShowLocationCard(!showLocationCard)}
                   >
                     <p>Change</p>
                     <span>
-                      <MdKeyboardArrowRight style={{display:showLocationCard?'block':'none'}} className="text-lg transition-all duration-500" />
-                      <MdKeyboardArrowDown  style={{display:!showLocationCard?'block':'none'}} className="text-lg transition-all duration-500"/>
+                      <MdKeyboardArrowRight
+                        style={{ display: showLocationCard ? "block" : "none" }}
+                        className="text-lg transition-all duration-500"
+                      />
+                      <MdKeyboardArrowDown
+                        style={{
+                          display: !showLocationCard ? "block" : "none",
+                        }}
+                        className="text-lg transition-all duration-500"
+                      />
                     </span>
-                    <div onClick={(e) => changeSchool(e)} style={{display:showLocationCard?'flex':'none'}} className="absolute w-44 h-36 bg-white shadow-lg shadow-secondary  top-5 left-5 flex-col justify-center items-center gap-4 text-lg z-40">
-                      <a id="nehruNagar" href="#" className="text-secondary hover:text-primary">Nehru Nagar</a>
-                      <a id="sukhdevNagar" href="#" className="text-secondary hover:text-primary">Sukhdev Nagar</a>
+                    <div
+                      onMouseLeave={(e) => setShowLocationCard(false)}
+                      onClick={(e) => changeSchool(e)}
+                      style={{ display: showLocationCard ? "flex" : "none" }}
+                      className="absolute w-44 h-36 bg-white shadow-lg shadow-secondary  top-5 left-5 flex-col justify-center items-center gap-4 text-lg z-40"
+                    >
+                      <a
+                        id="nehruNagar"
+                        href="#"
+                        className="text-secondary hover:text-primary"
+                      >
+                        Nehru Nagar
+                      </a>
+                      <a
+                        id="sukhdevNagar"
+                        href="#"
+                        className="text-secondary hover:text-primary"
+                      >
+                        Sukhdev Nagar
+                      </a>
                     </div>
                   </a>
                 </div>
@@ -143,7 +199,7 @@ const Navigation = () => {
                       key={item.id}
                       href="#"
                       id={item.id}
-                      className={`${navTetxColor} hover:text-orange-400 px-3 py-2 rounded-md text-lg font-medium `}
+                      className={`${navConfig.navTetxColor} hover:text-orange-400 px-3 py-2 rounded-md text-lg font-medium `}
                       onMouseEnter={handleNavHover}
                     >
                       {item.text}
@@ -152,13 +208,13 @@ const Navigation = () => {
                 })}
                 <a
                   href="#contact"
-                  className={`${navTetxColor} hover:text-orange-400 px-3 py-2 rounded-md text-lg font-medium `}
+                  className={`${navConfig.navTetxColor} hover:text-orange-400 px-3 py-2 rounded-md text-lg font-medium `}
                 >
                   Contact
                 </a>
                 <a
                   href="#"
-                  className={`${navTetxColor} hover:text-orange-400 py-1 px-10 border rounded-[25px] text-lg font-medium `}
+                  className={`${navConfig.navTetxColor} hover:text-orange-400 py-1 px-10 border rounded-[25px] text-lg font-medium `}
                 >
                   Login
                 </a>

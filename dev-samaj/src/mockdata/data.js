@@ -1,15 +1,6 @@
-import { title } from "framer-motion/client";
-import Teacher1 from "../assets/teachers/teacher1.jpeg";
-import Teacher2 from "../assets/teachers/teacher2.jpg";
-import Teacher3 from "../assets/teachers/teacher3.jpg";
-import Teacher4 from "../assets/teachers/teacher4.jpg";
-import Teacher5 from "../assets/teachers/teacher5.jpeg";
-import Teacher6 from "../assets/teachers/teacher6.jpg";
-import Teacher7 from "../assets/teachers/teacher7.jpg";
-// import Teacher8 from "../assets/teachers/teacher8.jpg";
-// import Teacher9 from "../assets/teachers/teacher9.jpg";
-// import Teacher10 from "../assets/teachers/teacher10.jpg";
-// import Teacher11 from "../assets/teachers/teacher11.jpeg";
+import Img1 from "../assets/banner1.png";
+import Img2 from "../assets/banner2.png";
+
 export const NavbarMenu = [
   {
     id: 1,
@@ -72,3 +63,21 @@ export const TeacherData = [
     delay: 0.5,
   },
 ];
+
+export const BannerData = {
+  image: Img1,
+  tag: "Moments to Cherish",
+  title: "Life at Dev Samaj School: A Climps into Our Journey",
+  subtitle:
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+  link: "#",
+};
+
+export const BannerData2 = {
+  image: Img2,
+  tag: "Stories in Motion",
+  title: "Life at Dev Samaj School: Inspiring Moments in Motion",
+  subtitle:
+    "Our scheduling system allows you to select based on your free time. Lorem ipsum demo text for template. Keep track of your students class and tutoring schedules, and never miss your lectures. The best online class scheduling system with easy accessibility. Lorem ipsum is a placeholder text commonly used",
+  link: "#",
+};

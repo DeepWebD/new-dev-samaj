@@ -1,9 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const PrayerCard = ({prayer}) => {
-  // {id,title,description,dayName,image}
-  console.log(prayer)
+const PrayerCard = ({ prayer }) => {
   return (
     <div className="px-2 py-20 w-full flex justify-center">
       <div className="bg-white lg:mx-8 lg:flex lg:max-w-5xl lg:shadow-lg rounded-lg">
@@ -11,8 +9,7 @@ const PrayerCard = ({prayer}) => {
           <div
             className="lg:scale-110 h-80 bg-cover lg:h-full rounded-b-none border lg:rounded-lg"
             style={{
-              backgroundImage:
-                `url(${prayer.image})`,
+              backgroundImage: `url(${prayer.image})`,
             }}
           ></div>
         </div>
@@ -27,13 +24,12 @@ const PrayerCard = ({prayer}) => {
             actively contribute to environmental conservation. The platform will
             provide users with personalized tracking, education, and engagement
             features to empower them to make eco-friendly decisions in various
-            aspects of their lives.
-            The "Eco-Tracker" project aims to create a web-based platform that
-            encourages individuals to adopt sustainable lifestyle choices and
-            actively contribute to environmental conservation. The platform will
-            provide users with personalized tracking, education, and engagement
-            features to empower them to make eco-friendly decisions in various
-            aspects of their lives.
+            aspects of their lives. The "Eco-Tracker" project aims to create a
+            web-based platform that encourages individuals to adopt sustainable
+            lifestyle choices and actively contribute to environmental
+            conservation. The platform will provide users with personalized
+            tracking, education, and engagement features to empower them to make
+            eco-friendly decisions in various aspects of their lives.
           </p>
           <div className="mt-8">
             <p

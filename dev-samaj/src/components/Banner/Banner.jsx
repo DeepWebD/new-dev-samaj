@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { motion } from "framer-motion";
 import { SlideUp } from "../../utility/animation";
@@ -15,8 +16,8 @@ const Banner = ({ image, title, subtitle, link, tag, reverse }) => {
             className={`flex justify-start items-center  ${
               reverse && "md:order-last md:justify-end"
             }`}
-          > 
-          {reverse ?<VideoPlayer />:<ImageSlider />}
+          >
+            {reverse ? <VideoPlayer /> : <ImageSlider />}
             {/* <ImageSlider /> */}
             {/* <motion.img
               initial={{ opacity: 0, scale: 0.5 }}

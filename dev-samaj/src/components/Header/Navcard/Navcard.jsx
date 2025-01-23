@@ -4,10 +4,8 @@ import NavcardContent from "./NavcardContent/NavcardContent";
 
 const Navcard = (props) => {
   const [activeTab, setActiveTab] = useState("");
-  const [cardPosition, setCardPosition] = useState("top-32");
+  const [cardPosition, setCardPosition] = useState("top-28");
   const { showCard, subNavbarData } = props;
-   
-  console.log(subNavbarData);
 
   const tabClickHandler = (e) => {
     if (e.target.id) {
@@ -17,10 +15,9 @@ const Navcard = (props) => {
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
-      setCardPosition("top-24");
-   
+      setCardPosition("top-20");
     } else {
-      setCardPosition("top-32");
+      setCardPosition("top-28");
     }
   };
 
@@ -30,24 +27,20 @@ const Navcard = (props) => {
     }
   }, [subNavbarData]);
 
-    // eslint-disable-next-line no-undef
-    useEffect(() => {
-      window.addEventListener("scroll", handleScroll);
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-      };
-    }, []);
+  // eslint-disable-next-line no-undef
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const listItem = subNavbarData?.map((item) => {
     return (
       <div
         key={item.id}
         id={item.id}
-        className={
-          activeTab === item.id
-            ? "text-secondary font-bold"
-            : ""
-        }
+        className={activeTab === item.id ? "text-secondary font-bold" : ""}
       >
         {item.text}
       </div>
@@ -72,7 +65,9 @@ const Navcard = (props) => {
 
   return (
     <div style={{ display: showCard ? "block" : "none" }}>
-      <div className={`hidden lg:block fixed z-20 w-[800px] h-[300px] border bottom-2 text-secondary bg-white ${cardPosition} transition-all duration-500 right-20`}>
+      <div
+        className={`hidden lg:block fixed z-20 w-[800px] h-[300px] border bottom-2 text-secondary bg-white shadow-lg ${cardPosition} transition-all duration-500 right-[10%]`}
+      >
         <div className="flex flex-row justify-center items-center h-[100%] w-[100%]">
           <div
             className="flex flex-col justify-center gap-2  px-5 text-black w-[200px]  h-[100%] border-r-2 border-secondary;"

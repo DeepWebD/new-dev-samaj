@@ -1,16 +1,16 @@
-import React,{ useState} from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
 
 const ResponsiveMenu = (props) => {
   const { isOpen, navbarData } = props;
-  const [activeNaveLink, setActiveNavLink] = useState('');
+  const [activeNaveLink, setActiveNavLink] = useState("");
 
-  const handleLinkClick = (e,id) => {
+  const handleLinkClick = (e, id) => {
     e.stopPropagation();
-    console.log(id);
+
     setActiveNavLink(id);
-  }
+  };
   return (
     <AnimatePresence mode="wait">
       {isOpen && (
@@ -29,13 +29,21 @@ const ResponsiveMenu = (props) => {
                     key={item.id}
                     id={item.id}
                     className="text-xl font-bold w-full flex flex-col justify-center items-center pb-4 border-b-[1px] border-slate-400"
-                    onClick={(e) => handleLinkClick(e,item.id)}
+                    onClick={(e) => handleLinkClick(e, item.id)}
                   >
                     <a href="#">{item.text}</a>
-                    <ul style={{display:activeNaveLink==item.id?'block':'none'}} className="flex text-lg font-medium w-full text-slate-400 flex-col gap-1">
+                    <ul
+                      style={{
+                        display: activeNaveLink == item.id ? "block" : "none",
+                      }}
+                      className="flex text-lg font-medium w-full text-slate-400 flex-col gap-1"
+                    >
                       {item.subNavbar?.map((subItem) => {
                         return (
-                          <li key={subItem.id} className="w-full flex justify-center hover:text-white">
+                          <li
+                            key={subItem.id}
+                            className="w-full flex justify-center hover:text-white"
+                          >
                             <a href="#">{subItem.text}</a>
                           </li>
                         );
