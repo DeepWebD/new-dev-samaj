@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Logo from "../../../assets/logo.png";
 import navbarData from "../../../mockdata/navbarData";
 import Navcard from "../Navcard/Navcard";
@@ -7,6 +7,8 @@ import { IoMdClose } from "react-icons/io";
 import ResponsiveMenu from "../../Navbar/ResponsiveMenu";
 import { GrLocation } from "react-icons/gr";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
+import { useUiContext } from "../../../context/UiContext";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [navConfig, setNavConfig] = useState({
@@ -17,30 +19,31 @@ const Navigation = () => {
     navTetxColor: "text-white",
     shadow: "shadow-b",
   });
-
+  const { showCard, setShowCard, isOpen, setIsOpen } = useUiContext();
   const [subNavbarData, setSubNavbarData] = useState([]);
-  const [showCard, setShowCard] = useState(false);
+  // const [showCard, setShowCard] = useState(false);
   const navbarCardRef = useRef(null);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
   const [location, setLocation] = useState("nehruNagar");
   const [showLocationCard, setShowLocationCard] = useState(false);
-  const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
-  console.log("Windows URL 1", currentUrl);
-  useEffect(() => {
-    console.log("Windows URL 2", currentUrl);
-    // if (currentUrl !== "/") {
-    //   setShowCard(false);
-    //   setNavConfig({
-    //     ...navConfig,
-    //     navbarBg: "bg-[#0A3981]",
-    //     navHeight: "h-[80px]",
-    //     imgHeight: "h-[80px]",
-    //     imgWidth: "w-16",
-    //     navTetxColor: "text-white",
-    //     shadow: "shadow-b",
-    //   });
-    // }
-  }, []);
+
+  // const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
+  // console.log("Windows URL 1", currentUrl);
+  // useEffect(() => {
+  //   console.log("Windows URL 2", currentUrl);
+  //   // if (currentUrl !== "/") {
+  //   //   setShowCard(false);
+  //   //   setNavConfig({
+  //   //     ...navConfig,
+  //   //     navbarBg: "bg-[#0A3981]",
+  //   //     navHeight: "h-[80px]",
+  //   //     imgHeight: "h-[80px]",
+  //   //     imgWidth: "w-16",
+  //   //     navTetxColor: "text-white",
+  //   //     shadow: "shadow-b",
+  //   //   });
+  //   // }
+  // }, []);
   /**
    * Handles the hover event on the navigation items.
    * Sets the showCard state to true and updates the subNavbarData state if applicable.
@@ -144,7 +147,9 @@ const Navigation = () => {
                 />
               </div>
               <div className={`flex flex-col ${navConfig.navTetxColor}`}>
-                <div className="text-xl font-bold">DEV SAMAJ SCHOOL</div>
+                <div className="text-xl font-bold w-auto">
+                  <Link to="/"> DEV SAMAJ SCHOOL</Link>
+                </div>
                 <div className="text-sm font-light flex justify-start items-center gap-2">
                   <GrLocation />
                   <p>Nehru Nagar</p>
@@ -237,7 +242,7 @@ const Navigation = () => {
         </div>
       </nav>
       {/* Mobile Sidebar Section */}
-      <ResponsiveMenu navbarData={navbarData} isOpen={isOpen} />
+      <ResponsiveMenu navbarData={navbarData} />
     </>
   );
 };

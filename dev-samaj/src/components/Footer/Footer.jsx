@@ -1,19 +1,9 @@
-import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiLocationMarker } from "react-icons/hi";
-import { MdComputer } from "react-icons/md";
-import FooterImg from "../../assets/footer.jpg";
 import Logo from "../../assets/logo.png";
 
-const FooterBg = {
-  backgroundImage: `url(${FooterImg})`,
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  backgroundPosition: "bottom center",
-};
-
 const Footer = () => {
-  // style={FooterBg} 
+  // style={FooterBg}
   return (
     <div className="rounded-t-3xl">
       <div className="bg-secondary text-gray-100">
@@ -22,7 +12,7 @@ const Footer = () => {
             {/* brand info section */}
             <div className="py-8 px-4 space-y-4">
               <div className="text-2xl flex items-center gap-2 font-bold uppercase">
-               <img className="w-10 h-10" src={Logo}  alt="Logo"/>
+                <img className="w-10 h-10" src={Logo} alt="Logo" />
                 {/* <MdComputer className="text-secondary text-4xl" /> */}
                 <p className="">Dev Samaj School</p>
               </div>
@@ -132,7 +122,7 @@ const Footer = () => {
             </div>
           </div>
           {/* copyright section  */}
-          <div className="mt-8">
+          <div className="mt-2">
             <div className="text-center py-6 border-t-2 border-gray-800/10">
               <span className="text-sm bg- text-gray-100">
                 {" "}

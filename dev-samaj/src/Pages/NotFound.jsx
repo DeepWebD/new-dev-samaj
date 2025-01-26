@@ -1,12 +1,40 @@
 import { useNavigate } from "react-router-dom";
+import { BsEmojiExpressionless } from "react-icons/bs";
 
 const NotFound = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <h1>404 | Page Not Found </h1>
-      <bt />
-      <button onClick={() => navigate("/")}>Goto Home</button>
+    <div className="h-screen mx-auto grid place-items-center mt-[80px] text-center px-8">
+      <div>
+        <BsEmojiExpressionless className="w-20 h-20 mx-auto text-primary" />
+        {/* <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          aria-hidden="true"
+          className="w-20 h-20 mx-auto"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3 2.25a.75.75 0 01.75.75v.54l1.838-.46a9.75 9.75 0 016.725.738l.108.054a8.25 8.25 0 005.58.652l3.109-.732a.75.75 0 01.917.81 47.784 47.784 0 00.005 10.337.75.75 0 01-.574.812l-3.114.733a9.75 9.75 0 01-6.594-.77l-.108-.054a8.25 8.25 0 00-5.69-.625l-2.202.55V21a.75.75 0 01-1.5 0V3A.75.75 0 013 2.25z"
+            clipRule="evenodd"
+          ></path>
+        </svg> */}
+        <h1 className="block antialiased tracking-normal font-sans text-5xl font-semibold leading-tight text-blue-gray-900 mt-10 !text-3xl !leading-snug md:!text-4xl">
+          Error 404 <br />
+          It looks like something went wrong.
+        </h1>
+        <p className="block antialiased font-sans text-[18px] font-light leading-relaxed text-inherit mt-8 mb-14 font-normal text-gray-500 mx-auto md:max-w-sm">
+          Don't worry. Please come back later.
+        </p>
+        <button
+          className="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg bg-primary text-white shadow-md shadow-gray-900/10 hover:shadow-lg hover:shadow-gray-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none bg-primary w-full px-4 md:w-[8rem]"
+          type="button"
+          data-ripple-light="true"
+        >
+          back home
+        </button>
+      </div>
     </div>
   );
 };

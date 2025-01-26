@@ -1,15 +1,25 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
+import { useNavigate } from "react-router-dom";
+import { useUiContext } from "../../context/UiContext";
 
 const ResponsiveMenu = (props) => {
-  const { isOpen, navbarData } = props;
+  const { navbarData } = props;
+  const { isOpen, setIsOpen } = useUiContext();
   const [activeNaveLink, setActiveNavLink] = useState("");
+  const navigate = useNavigate();
 
   const handleLinkClick = (e, id) => {
     e.stopPropagation();
 
     setActiveNavLink(id);
+  };
+
+  const handleNavigate = (e, id) => {
+    e.preventDefault();
+    navigate("/" + id);
+    setIsOpen(false);
   };
   return (
     <AnimatePresence mode="wait">
@@ -44,7 +54,12 @@ const ResponsiveMenu = (props) => {
                             key={subItem.id}
                             className="w-full flex justify-center hover:text-white"
                           >
-                            <a href="#">{subItem.text}</a>
+                            <a
+                              onClick={(e) => handleNavigate(e, subItem.id)}
+                              href="#"
+                            >
+                              {subItem.text}
+                            </a>
                           </li>
                         );
                       })}
