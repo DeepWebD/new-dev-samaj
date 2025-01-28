@@ -2,8 +2,7 @@
 import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
-const LeaderCard = ({teacher}) => {
-    console.log(teacher)
+const LeaderCard = ({ teacher }) => {
   return (
     <div className="mx-10 w-80 px-6 py-6  text-center bg-secondary rounded-lg lg:mt-0 xl:px-10">
       <div className="space-y-4 xl:space-y-6">

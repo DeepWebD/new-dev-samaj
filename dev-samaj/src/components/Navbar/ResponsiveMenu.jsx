@@ -2,11 +2,19 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
-import { useUiContext } from "../../context/UiContext";
+
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectShowResponsiveNav,
+  setShowResponsiveNav,
+} from "../../store/reducers/uiSlice";
 
 const ResponsiveMenu = (props) => {
+  const dispatch = useDispatch();
+  const showResponsiveNav = useSelector(selectShowResponsiveNav);
+
   const { navbarData } = props;
-  const { isOpen, setIsOpen } = useUiContext();
+
   const [activeNaveLink, setActiveNavLink] = useState("");
   const navigate = useNavigate();
 
@@ -18,12 +26,12 @@ const ResponsiveMenu = (props) => {
 
   const handleNavigate = (e, id) => {
     e.preventDefault();
+    dispatch(setShowResponsiveNav(false));
     navigate("/" + id);
-    setIsOpen(false);
   };
   return (
     <AnimatePresence mode="wait">
-      {isOpen && (
+      {showResponsiveNav && (
         <motion.div
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}

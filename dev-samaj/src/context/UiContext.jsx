@@ -1,6 +1,11 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState } from "react";
 
+const initialUiState = {
+  showCard: false,
+  isResponsiveNavOpen: false,
+  path: "",
+};
 // Create the context
 const UiContext = createContext();
 
@@ -9,6 +14,7 @@ export const useUiContext = () => useContext(UiContext);
 
 // Create a provider component
 const UiContextProvider = ({ children }) => {
+  const [uiState, setUiState] = useState(initialUiState);
   const [showCard, setShowCard] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   // Define any other state or functions you need
@@ -21,6 +27,12 @@ const UiContextProvider = ({ children }) => {
     setIsOpen(isOpen);
   };
 
+  const setUiStateHandler = (uiStateArgs) => {
+    // console.log("uiState-------->", uiState);
+    // console.log("uiStateArgs---->", uiStateArgs);
+    setUiState(uiStateArgs);
+  };
+
   return (
     <UiContext.Provider
       value={{
@@ -28,6 +40,8 @@ const UiContextProvider = ({ children }) => {
         setShowCard: setCardVisibility,
         isOpen,
         setIsOpen: setResponsiveCardVisibility,
+        uiState,
+        setUiState: setUiStateHandler,
       }}
     >
       {children}

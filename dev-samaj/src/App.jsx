@@ -23,6 +23,8 @@ import RegistrationForm from "./Pages/RegistrationForm";
 import Transportation from "./Pages/Transportation";
 import UpcomingEvent from "./Pages/UpcomingEvent";
 import UiContextProvider from "./context/UiContext";
+import store from "./store/store";
+import { Provider } from "react-redux";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -51,7 +53,9 @@ const App = () => {
   return (
     <main className="overflow-x-hidden">
       <UiContextProvider>
-        <RouterProvider router={router} />
+        <Provider store={store}>
+          <RouterProvider store={store} router={router} />
+        </Provider>
       </UiContextProvider>
     </main>
   );

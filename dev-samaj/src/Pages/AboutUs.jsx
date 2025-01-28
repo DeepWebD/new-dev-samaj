@@ -1,6 +1,9 @@
 import { useEffect } from "react";
 import { useUiContext } from "../context/UiContext";
+import { useLocation } from "react-router-dom";
 const AboutUs = () => {
+  const location = useLocation();
+  console.log(location.pathname);
   const { setShowCard } = useUiContext();
   useEffect(() => {
     setShowCard(false);

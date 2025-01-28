@@ -5,7 +5,7 @@ const navbarData = [
     subNavbar: [
       {
         id: "about-devSamaj",
-        text: "About Dev Samaj",
+        text: "Vision and History",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
         image: "https://devsamajschools.com/images/Principal.jpg",
       },

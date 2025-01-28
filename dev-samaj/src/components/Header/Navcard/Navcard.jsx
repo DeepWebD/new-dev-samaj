@@ -6,7 +6,6 @@ const Navcard = (props) => {
   const [activeTab, setActiveTab] = useState("");
   const [cardPosition, setCardPosition] = useState("top-28");
   const { showCard, subNavbarData } = props;
-  console.log("NavCard showCard------>", showCard);
 
   const tabClickHandler = (e) => {
     if (e.target.id) {

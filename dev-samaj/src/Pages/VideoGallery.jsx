@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { vidoes } from "../mockdata/video";
 
 const VideoGallery = () => {
-  console.log(vidoes);
-
   const [videoGallery, setVideGallery] = useState(vidoes);
   return (
     <div className=" text-black my-[90px] flex flex-col  items-center">

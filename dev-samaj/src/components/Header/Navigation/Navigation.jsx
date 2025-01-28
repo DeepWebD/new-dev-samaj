@@ -7,42 +7,47 @@ import { IoMdClose } from "react-icons/io";
 import ResponsiveMenu from "../../Navbar/ResponsiveMenu";
 import { GrLocation } from "react-icons/gr";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
-import { useUiContext } from "../../../context/UiContext";
-import { Link } from "react-router-dom";
 
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectShowNavCard,
+  selectShowResponsiveNav,
+  setShowNavCard,
+  setShowResponsiveNav,
+} from "../../../store/reducers/uiSlice";
 const Navigation = () => {
+  const dispatch = useDispatch();
+  const showNavCard = useSelector(selectShowNavCard);
+  const showResponsiveNav = useSelector(selectShowResponsiveNav);
+
   const [navConfig, setNavConfig] = useState({
-    navbarBg: "bg-[#0A3981]",
-    navHeight: "h-[80px]",
-    imgHeight: "h-[80px]",
-    imgWidth: "w-16",
+    navbarBg: "bg-secondary lg:bg-transparent",
+    navHeight: "h-[80px] lg:h-[160px]",
+    imgHeight: "h-16 lg:h-28",
+    imgWidth: "w-16 lg:w-28",
     navTetxColor: "text-white",
-    shadow: "shadow-b",
+    shadow: "shadow-none",
   });
-  const { showCard, setShowCard, isOpen, setIsOpen } = useUiContext();
   const [subNavbarData, setSubNavbarData] = useState([]);
-  // const [showCard, setShowCard] = useState(false);
   const navbarCardRef = useRef(null);
-  // const [isOpen, setIsOpen] = useState(false);
   const [location, setLocation] = useState("nehruNagar");
   const [showLocationCard, setShowLocationCard] = useState(false);
 
-  // const [currentUrl, setCurrentUrl] = useState(window.location.pathname);
-  // console.log("Windows URL 1", currentUrl);
   // useEffect(() => {
-  //   console.log("Windows URL 2", currentUrl);
-  //   // if (currentUrl !== "/") {
-  //   //   setShowCard(false);
-  //   //   setNavConfig({
-  //   //     ...navConfig,
-  //   //     navbarBg: "bg-[#0A3981]",
-  //   //     navHeight: "h-[80px]",
-  //   //     imgHeight: "h-[80px]",
-  //   //     imgWidth: "w-16",
-  //   //     navTetxColor: "text-white",
-  //   //     shadow: "shadow-b",
-  //   //   });
-  //   // }
+
+  //   if (currentUrl !== "/") {
+  //     setShowCard(false);
+  //     setNavConfig({
+  //       ...navConfig,
+  //       navbarBg: "bg-[#0A3981]",
+  //       navHeight: "h-[80px]",
+  //       imgHeight: "h-[80px]",
+  //       imgWidth: "w-16",
+  //       navTetxColor: "text-white",
+  //       shadow: "shadow-b",
+  //     });
+  //   }
   // }, []);
   /**
    * Handles the hover event on the navigation items.
@@ -51,7 +56,7 @@ const Navigation = () => {
    * @param {Event} e - The event object representing the hover event.
    */
   const handleNavHover = (e) => {
-    setShowCard(true);
+    dispatch(setShowNavCard(true));
     navbarData.map((item) => {
       if (item.id === e.target.id) {
         if (item.subNavbar) {
@@ -64,44 +69,43 @@ const Navigation = () => {
   /**
    * Handles the scroll event and updates the navbar styles based on the scroll position.
    */
-  // const handleScroll = () => {
-  //   console.log(window.scrollY);
-  //   if (window.scrollY > 50) {
-  //     setNavConfig({
-  //       ...navConfig,
-  //       navbarBg: "bg-[#0A3981]",
-  //       navHeight: "h-[80px]",
-  //       imgHeight: "h-[80px]",
-  //       imgWidth: "w-16",
-  //       navTetxColor: "text-white",
-  //       shadow: "shadow-b",
-  //     });
-  //   } else if (window.scrollY < 50) {
-  //     setNavConfig({
-  //       navbarBg: "bg-secondary lg:bg-transparent",
-  //       navHeight: "h-[80px] lg:h-[160px]",
-  //       imgHeight: "h-16 lg:h-28",
-  //       imgWidth: "w-16 lg:w-28",
-  //       navTetxColor: "text-white",
-  //       shadow: "shadow-none",
-  //     });
-  //   }
-  // };
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setNavConfig({
+        ...navConfig,
+        navbarBg: "bg-[#0A3981]",
+        navHeight: "h-[80px]",
+        imgHeight: "h-[80px]",
+        imgWidth: "w-16",
+        navTetxColor: "text-white",
+        shadow: "shadow-b",
+      });
+    } else if (window.scrollY < 50) {
+      setNavConfig({
+        navbarBg: "bg-secondary lg:bg-transparent",
+        navHeight: "h-[80px] lg:h-[160px]",
+        imgHeight: "h-16 lg:h-28",
+        imgWidth: "w-16 lg:w-28",
+        navTetxColor: "text-white",
+        shadow: "shadow-none",
+      });
+    }
+  };
 
   // eslint-disable-next-line no-undef
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleClickOutside = (event) => {
     if (
       navbarCardRef.current &&
       !navbarCardRef.current.contains(event.target)
     ) {
-      setShowCard(false);
+      dispatch(setShowNavCard(false));
       setSubNavbarData([]);
     }
   };
@@ -115,20 +119,24 @@ const Navigation = () => {
 
   const changeSchool = (e) => {
     e.preventDefault();
-
     setLocation(e.target.id);
     setShowLocationCard(!showLocationCard);
   };
 
   const handleNavCardMouseLeave = () => {
-    setShowCard(false);
+    dispatch(setShowNavCard(false));
     setSubNavbarData([]);
   };
 
+  const responseNavHandler = (isOpen) => {
+    console.log("clicked", isOpen);
+
+    dispatch(setShowResponsiveNav(isOpen));
+  };
   return (
     <>
       <div ref={navbarCardRef} onMouseLeave={handleNavCardMouseLeave}>
-        <Navcard showCard={showCard} subNavbarData={subNavbarData} />
+        <Navcard showCard={showNavCard} subNavbarData={subNavbarData} />
       </div>
 
       <nav
@@ -228,14 +236,18 @@ const Navigation = () => {
             {/* Mobile Hamnurger Menu  */}
             <div className="lg:hidden">
               <MdMenu
-                style={{ display: isOpen ? "none" : "block" }}
+                style={{
+                  display: showResponsiveNav ? "none" : "block",
+                }}
                 className="text-4xl text-white"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => responseNavHandler(true)}
               />
               <IoMdClose
-                style={{ display: isOpen ? "block" : "none" }}
+                style={{
+                  display: showResponsiveNav ? "block" : "none",
+                }}
                 className="text-4xl text-white"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => responseNavHandler(false)}
               />
             </div>
           </div>
