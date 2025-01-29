@@ -46,7 +46,7 @@ const Navigation = () => {
   //     );
   //   }
   // }, [currentPath, dispatch]);
-  console.log("Current Path Navigation", currentPath);
+  // console.log("Current Path Navigation", currentPath);
   const handleNavHover = (e) => {
     dispatch(setShowNavCard(true));
     navbarData.map((item) => {

@@ -1,8 +1,6 @@
-import React from "react";
 import HeroImg from "../../assets/hero.png";
 import { FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { SlideRight } from "../../utility/animation";
 import NumberCounter from "../NumberCounter/NumberCounter";
 
 const Hero = () => {
@@ -21,16 +19,7 @@ const Hero = () => {
           className="flex flex-col justify-center py-14 md:pr-16 xl:pr-40 md:py-0"
         >
           <div className="text-center md:text-left space-y-6">
-            {/* <motion.p
-              variants={SlideRight(0.4)}
-              initial="hidden"
-              animate="visible"
-              className="text-orange-600 uppercase font-semibold"
-            >
-              Acquire Knowledge and Form Character
-            </motion.p> */}
             <h1 className="text-4xl lg:text-6xl  font-bold !leading-tight text-secondary">
-              {/* <span className="text-primary">Welome</span> */}
               <span>Welome To Dev Samaj School</span>
             </h1>
             <p className="font-light text-lg">
