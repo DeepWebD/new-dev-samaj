@@ -8,53 +8,45 @@ import ResponsiveMenu from "../../Navbar/ResponsiveMenu";
 import { GrLocation } from "react-icons/gr";
 import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectShowNavCard,
   selectShowResponsiveNav,
   setShowNavCard,
+  setNavConfig,
   setShowResponsiveNav,
+  selectCurrentPath,
+  selectNavConfig,
+  setCurrentPath,
 } from "../../../store/reducers/uiSlice";
 const Navigation = () => {
   const dispatch = useDispatch();
   const showNavCard = useSelector(selectShowNavCard);
   const showResponsiveNav = useSelector(selectShowResponsiveNav);
-
-  const [navConfig, setNavConfig] = useState({
-    navbarBg: "bg-secondary lg:bg-transparent",
-    navHeight: "h-[80px] lg:h-[160px]",
-    imgHeight: "h-16 lg:h-28",
-    imgWidth: "w-16 lg:w-28",
-    navTetxColor: "text-white",
-    shadow: "shadow-none",
-  });
+  const currentPath = useSelector(selectCurrentPath);
+  const navConfig = useSelector(selectNavConfig);
+  const navigate = useNavigate();
   const [subNavbarData, setSubNavbarData] = useState([]);
   const navbarCardRef = useRef(null);
   const [location, setLocation] = useState("nehruNagar");
   const [showLocationCard, setShowLocationCard] = useState(false);
 
   // useEffect(() => {
-
-  //   if (currentUrl !== "/") {
-  //     setShowCard(false);
-  //     setNavConfig({
-  //       ...navConfig,
-  //       navbarBg: "bg-[#0A3981]",
-  //       navHeight: "h-[80px]",
-  //       imgHeight: "h-[80px]",
-  //       imgWidth: "w-16",
-  //       navTetxColor: "text-white",
-  //       shadow: "shadow-b",
-  //     });
+  //   if (currentPath != "/") {
+  //     dispatch(
+  //       setNavConfig({
+  //         navbarBg: "bg-[#0A3981]",
+  //         navHeight: "h-[80px]",
+  //         imgHeight: "h-[80px]",
+  //         imgWidth: "w-16",
+  //         navTetxColor: "text-white",
+  //         shadow: "shadow-b",
+  //       })
+  //     );
   //   }
-  // }, []);
-  /**
-   * Handles the hover event on the navigation items.
-   * Sets the showCard state to true and updates the subNavbarData state if applicable.
-   *
-   * @param {Event} e - The event object representing the hover event.
-   */
+  // }, [currentPath, dispatch]);
+  console.log("Current Path Navigation", currentPath);
   const handleNavHover = (e) => {
     dispatch(setShowNavCard(true));
     navbarData.map((item) => {
@@ -71,24 +63,27 @@ const Navigation = () => {
    */
   const handleScroll = () => {
     if (window.scrollY > 50) {
-      setNavConfig({
-        ...navConfig,
-        navbarBg: "bg-[#0A3981]",
-        navHeight: "h-[80px]",
-        imgHeight: "h-[80px]",
-        imgWidth: "w-16",
-        navTetxColor: "text-white",
-        shadow: "shadow-b",
-      });
+      dispatch(
+        setNavConfig({
+          navbarBg: "bg-[#0A3981]",
+          navHeight: "h-[80px]",
+          imgHeight: "h-[80px]",
+          imgWidth: "w-16",
+          navTetxColor: "text-white",
+          shadow: "shadow-b",
+        })
+      );
     } else if (window.scrollY < 50) {
-      setNavConfig({
-        navbarBg: "bg-secondary lg:bg-transparent",
-        navHeight: "h-[80px] lg:h-[160px]",
-        imgHeight: "h-16 lg:h-28",
-        imgWidth: "w-16 lg:w-28",
-        navTetxColor: "text-white",
-        shadow: "shadow-none",
-      });
+      dispatch(
+        setNavConfig({
+          navbarBg: "bg-secondary lg:bg-transparent",
+          navHeight: "h-[80px] lg:h-[160px]",
+          imgHeight: "h-16 lg:h-28",
+          imgWidth: "w-16 lg:w-28",
+          navTetxColor: "text-white",
+          shadow: "shadow-none",
+        })
+      );
     }
   };
 
@@ -108,6 +103,12 @@ const Navigation = () => {
       dispatch(setShowNavCard(false));
       setSubNavbarData([]);
     }
+  };
+
+  const homeClickHandler = (e) => {
+    e.preventDefault();
+    dispatch(setCurrentPath("/"));
+    navigate("/");
   };
 
   useEffect(() => {
@@ -142,7 +143,7 @@ const Navigation = () => {
       <nav
         className={`fixed top-0 w-full z-20 transition-colors duration-300 ${navConfig.shadow} ${navConfig.navbarBg}`}
       >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
             className={`flex items-center justify-between ${navConfig.navHeight}`}
           >
@@ -156,7 +157,9 @@ const Navigation = () => {
               </div>
               <div className={`flex flex-col ${navConfig.navTetxColor}`}>
                 <div className="text-xl font-bold w-auto">
-                  <Link to="/"> DEV SAMAJ SCHOOL</Link>
+                  <a href="#" onClick={(e) => homeClickHandler(e)}>
+                    DEV SAMAJ SCHOOL
+                  </a>
                 </div>
                 <div className="text-sm font-light flex justify-start items-center gap-2">
                   <GrLocation />
@@ -212,18 +215,19 @@ const Navigation = () => {
                       key={item.id}
                       href="#"
                       id={item.id}
-                      className={`${navConfig.navTetxColor} hover:text-orange-400 px-3 py-2 rounded-md text-lg font-medium `}
+                      className={`${navConfig.navTetxColor} hover:border-b-[1px] font-bold mx-3 py-2 text-medium `}
                       onMouseEnter={handleNavHover}
+                      // onMouseLeave={handleNavCardMouseLeave}
                     >
-                      {item.text}
+                      {item.text.toUpperCase()}
                     </a>
                   );
                 })}
                 <a
                   href="#contact"
-                  className={`${navConfig.navTetxColor} hover:text-orange-400 px-3 py-2 rounded-md text-lg font-medium `}
+                  className={`${navConfig.navTetxColor} hover:border-b-[1px] font-bold px-3 py-2 text-medium`}
                 >
-                  Contact
+                  CONTACT
                 </a>
                 <a
                   href="#"

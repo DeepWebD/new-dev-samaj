@@ -32,19 +32,7 @@ const navbarData = [
       },
     ],
   },
-  {
-    id: "mpd",
-    text: "MPD",
-    subNavbar: [
-      {
-        id: "mandatory",
-        text: "CBSC Mandatory disclosure",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7JEPgpgSs4gnoYWpWjbdzJOmHwUREQw25CA&s",
-      },
-    ],
-  },
+
   {
     id: "parents",
     text: "Parents",
@@ -69,6 +57,13 @@ const navbarData = [
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1WrKp827UA5AU8txRUj5dOcFZfJjut1ICbw&s",
+      },
+      {
+        id: "mandatory",
+        text: "CBSC Mandatory disclosure",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7JEPgpgSs4gnoYWpWjbdzJOmHwUREQw25CA&s",
       },
     ],
   },

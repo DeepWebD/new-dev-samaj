@@ -1,17 +1,19 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setShowNavCard } from "../../../../store/reducers/uiSlice";
+import {
+  setShowNavCard,
+  setCurrentPath,
+} from "../../../../store/reducers/uiSlice";
 
 const NavcardContent = (props) => {
   const dispatch = useDispatch();
   const { id, title, desc, images } = props;
   const navigate = useNavigate();
   const handleRedirect = (e, id) => {
-    console.log(e, id);
     e.preventDefault();
     dispatch(setShowNavCard(false));
-
+    dispatch(setCurrentPath("/" + id));
     navigate("/" + id);
   };
   return (

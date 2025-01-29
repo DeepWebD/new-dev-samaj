@@ -66,7 +66,7 @@ const Navcard = (props) => {
   return (
     <div style={{ display: showCard ? "block" : "none" }}>
       <div
-        className={`hidden lg:block fixed z-20 w-[800px] h-[300px] border bottom-2 text-secondary bg-white shadow-lg ${cardPosition} transition-all duration-500 right-[10%]`}
+        className={`hidden lg:block fixed z-20 w-[800px] h-[300px] border bottom-2 text-secondary bg-white shadow-lg ${cardPosition}  transition-all duration-500 right-[10%]`}
       >
         <div className="flex flex-row justify-center items-center h-[100%] w-[100%]">
           <div
