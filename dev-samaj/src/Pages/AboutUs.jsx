@@ -3,7 +3,7 @@ import HeroImg from "../assets/hero.png";
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import Timeline from "../components/Timeline/Timeline";
-
+import ModalComponent from "../components/Modal/ModalComponent";
 const AboutUs = () => {
   return (
     <>
@@ -86,8 +86,8 @@ const AboutUs = () => {
         </div>
       </div>
       {/* Mission Body */}
-      <div className="flex justify-center items-center py-16 my-16 bg-slate-400 w-[100vw]">
-        <p className="text-3xl mx-auto max-w-4xl text-center font-thin">
+      <div className="flex justify-center items-center py-20 my-20 bg-primary w-[100vw]">
+        <p className="text-3xl mx-auto max-w-3xl text-center font-thin text-white">
           Wesleyan’s mission is to be a Christian school of academic excellence
           by providing each student a diverse college preparatory education
           guided by Christian principles and beliefs; by challenging and
@@ -136,7 +136,8 @@ const AboutUs = () => {
 
             {/* Quote Section */}
             <div className="lg:pl-8">
-              <div className="space-y-6">
+              <hr />
+              <div className="space-y-6 py-4">
                 <Quote size={42} className="text-[#B4975A]" />
                 <blockquote className="text-[28px] font-light text-[#4A4A4A] leading-tight tracking-tight">
                   It's not a matter of choosing faith or intellect. It's faith
@@ -153,6 +154,7 @@ const AboutUs = () => {
                 </div>
                 <hr className="border-t border-gray-200 w-24" />
               </div>
+              <hr />
             </div>
           </div>
         </div>
@@ -162,6 +164,63 @@ const AboutUs = () => {
       <div className="container my-12">
         <Timeline />
       </div>
+
+      {/* Mission Body */}
+      <div className="flex justify-center text-center items-center py-20 my-20 bg-primary w-[100vw]">
+        <p className="text-3xl mx-auto max-w-xl text-center font-thin text-white">
+          "The earth is the Lord's, and the fulness thereof; the world, and they
+          that dwell therein." Psalm 24:1
+        </p>
+      </div>
+
+      {/* Video Section */}
+      <div className=" bg-white">
+        <div className="max-w-7xl mx-auto px-4 py-16 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Video Section */}
+            <div className="relative rounded-lg overflow-hidden shadow-lg">
+              <div className="relative pt-[56.25%]">
+                <video
+                  className="absolute top-0 left-0 w-full h-full object-cover"
+                  controls
+                  poster="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2000&auto=format&fit=crop"
+                >
+                  <source
+                    src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+
+            {/* Quote Section */}
+            <div className="lg:pl-8">
+              <hr />
+              <div className="space-y-6 py-8">
+                <Quote size={42} className="text-[#B4975A]" />
+                <blockquote className="text-[28px] font-light text-[#4A4A4A] leading-tight tracking-tight">
+                  As an English teacher, being able to integrate faith and
+                  spirituality and ideas about God in the classroom is so
+                  important to me.
+                </blockquote>
+                <div className="pt-2">
+                  <p className="text-[#4A4A4A] font-medium tracking-wider text-sm">
+                    Dawson Zimmerman
+                  </p>
+                  <p className="text-[#B4975A] text-sm tracking-wider">
+                    HEAD OF SCHOOL
+                  </p>
+                </div>
+                <hr className="border-t border-gray-200 w-24" />
+              </div>
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ModalComponent />
     </>
   );
 };
