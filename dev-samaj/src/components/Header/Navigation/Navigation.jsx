@@ -65,7 +65,7 @@ const Navigation = () => {
     if (window.scrollY > 50) {
       dispatch(
         setNavConfig({
-          navbarBg: "bg-[#0A3981]",
+          navbarBg: "bg-secondary",
           navHeight: "h-[80px]",
           imgHeight: "h-[80px]",
           imgWidth: "w-16",
@@ -76,7 +76,7 @@ const Navigation = () => {
     } else if (window.scrollY < 50) {
       dispatch(
         setNavConfig({
-          navbarBg: "bg-secondary lg:bg-transparent",
+          navbarBg: "bg-secondary",
           navHeight: "h-[80px] lg:h-[160px]",
           imgHeight: "h-16 lg:h-28",
           imgWidth: "w-16 lg:w-28",

@@ -5,7 +5,7 @@ const initialState = {
   showResponsiveNav: false,
   currentPath: "/",
   navConfig: {
-    navbarBg: "bg-secondary lg:bg-transparent",
+    navbarBg: "bg-secondary",
     navHeight: "h-[80px] lg:h-[160px]",
     imgHeight: "h-16 lg:h-28",
     imgWidth: "w-16 lg:w-28",

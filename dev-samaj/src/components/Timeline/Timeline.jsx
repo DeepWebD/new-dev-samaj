@@ -74,7 +74,7 @@ const Timeline = () => {
         isModalOpen={isModalOpen}
         setIsModalOpen={setIsModalOpen}
       />
-      <div>
+      <div className="our-story ">
         <h1 className="p-8  text-4xl text-secondary font-bold ">Our Story</h1>
         <Slider {...setting}>
           {timeline.map((item) => {

@@ -87,4 +87,7 @@ body{
     gap:50px !important;
   } */
 
+  .our-story .slick-dots {
+    bottom: -51px !important;
+  }
 

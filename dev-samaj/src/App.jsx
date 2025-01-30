@@ -25,13 +25,14 @@ import UpcomingEvent from "./Pages/UpcomingEvent";
 import UiContextProvider from "./context/UiContext";
 import store from "./store/store";
 import { Provider } from "react-redux";
+import ImageGallery from "./Pages/ImageGallery";
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
-        <Route path="images" element={<Image />}></Route>
+        <Route path="images" element={<ImageGallery />}></Route>
         <Route path="about-devSamaj" element={<AboutUs />}></Route>
         <Route path="admission" element={<Admission />}></Route>
         <Route path="criteria" element={<AdmissionCriteria />}></Route>
