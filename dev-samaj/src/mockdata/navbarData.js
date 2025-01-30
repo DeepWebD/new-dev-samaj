@@ -23,13 +23,13 @@ const navbarData = [
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREe2EqdlWW7T1ds2-m1UMBXGwP8Y55XNpkcA&s",
       },
-      {
-        id: "history",
-        text: "History",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-        image:
-          "https://media.istockphoto.com/id/1094210238/vector/hand-drawn-history-doodles-with-lettering.jpg?s=612x612&w=0&k=20&c=ZGiZ0_xrEhJMG673M1rTGM8vTR10Ktj5GjGWKnNfMNE=",
-      },
+      // {
+      //   id: "history",
+      //   text: "History",
+      //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+      //   image:
+      //     "https://media.istockphoto.com/id/1094210238/vector/hand-drawn-history-doodles-with-lettering.jpg?s=612x612&w=0&k=20&c=ZGiZ0_xrEhJMG673M1rTGM8vTR10Ktj5GjGWKnNfMNE=",
+      // },
     ],
   },
 
