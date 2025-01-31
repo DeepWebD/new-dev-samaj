@@ -1,29 +1,64 @@
 /* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import { IoMdClose } from "react-icons/io";
+import Path from "./Path";
 
-const ModalComponent = ({ isModalOpen, setIsModalOpen, modalData }) => {
+const routes = [
+  {
+    title: "Point 1",
+    description: "Description of the first event.",
+  },
+  {
+    title: "Point 2",
+    description: "Description of the second event.",
+  },
+  {
+    title: "Point 3",
+    description: "Description of the third event.",
+  },
+  {
+    title: "Point 4",
+    description: "Description of the fourth event.",
+  },
+  {
+    title: "Point 5",
+    description: "Description of the first event.",
+  },
+  {
+    title: "Point 6",
+    description: "Description of the second event.",
+  },
+  {
+    title: "Point 7",
+    description: "Description of the third event.",
+  },
+  {
+    title: "Point 8",
+    description: "Description of the fourth event.",
+  },
+];
+export const RouteModal = ({ isModalOpen, setIsModalOpen }) => {
   const closeModal = () => {
+    console.log("-------close-------");
     setIsModalOpen(false);
     document.body.classList.remove("overflow-y-hidden");
   };
 
-  console.log("modalData ModalComponent------->", modalData);
-
   // Close modal when pressing ESC key
   const handleKeyDown = (event) => {
+    console.log("-------Key close-------");
     if (event.keyCode === 27) {
       closeModal();
     }
   };
 
   useEffect(() => {
+    console.log("-------adding handleKeyDown event-------");
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
-
   return (
     <div>
       {isModalOpen && (
@@ -40,30 +75,10 @@ const ModalComponent = ({ isModalOpen, setIsModalOpen, modalData }) => {
               >
                 <IoMdClose className="text-2xl" />
               </button>
-              <div className="max-w-screen-lg mx-auto p-5">
-                <div className="mb-10 rounded overflow-hidden flex flex-col  ">
-                  <h1 className="text-3xl font-bold text-secondary">
-                    {modalData?.year}
-                  </h1>
-                  <a
-                    href="#"
-                    className="max-w-3xl font-semibold inline-block text-gray-700 mb-2"
-                  >
-                    {modalData?.title}
-                  </a>
-                  <a href="#">
-                    <img
-                      className="w-full my-4"
-                      src="https://images.pexels.com/photos/5120892/pexels-photo-5120892.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=625.0&sharp=10&w=1500"
-                      alt="Sunset in the mountains"
-                    />
-                  </a>
-                  <p className="text-gray-700 text-base leading-8 max-w-2xl mx-auto">
-                    {modalData?.longDescription}
-                  </p>
-                  <hr />
-                </div>
-              </div>
+              <h2 className="text-3xl text-secondary font-bold mb-12 pl-4">
+                Route
+              </h2>
+              <Path routes={routes} />
             </div>
           </div>
         </div>
@@ -71,5 +86,3 @@ const ModalComponent = ({ isModalOpen, setIsModalOpen, modalData }) => {
     </div>
   );
 };
-
-export default ModalComponent;

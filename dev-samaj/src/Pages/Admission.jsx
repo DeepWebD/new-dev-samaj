@@ -49,7 +49,7 @@ const Admission = () => {
   return (
     <div className="flex px-4 justify-center flex-col items-center p-2  mt-[180px]  font-bold ">
       {/* Admission */}
-      <div className="lg:ml-6 lg:col-start-2 lg:max-w-4xl py-16">
+      <div className="lg:ml-6 lg:col-start-2 lg:max-w-4xl pt-16">
         <DividerWithText text="Admission" />
         <ul className="mt-8 space-y-3 font-medium">
           {admissionProcess.map((text, index) => (
@@ -58,7 +58,7 @@ const Admission = () => {
         </ul>
       </div>
       {/* Withdrawal & Cancellation of Admission */}
-      <div className="lg:ml-6 lg:col-start-2 lg:max-w-4xl py-16">
+      <div className="lg:ml-6 lg:col-start-2 lg:max-w-4xl pt-16">
         <DividerWithText text="Withdrawal & Cancellation of Admission" />
         <ul className="mt-8 space-y-3 font-medium">
           {withdrawal_cancellation.map((text, index) => (
@@ -67,7 +67,7 @@ const Admission = () => {
         </ul>
       </div>
       {/* Payments of Dues */}
-      <div className="lg:ml-6 lg:col-start-2 lg:max-w-4xl py-16">
+      <div className="lg:ml-6 lg:col-start-2 lg:max-w-4xl pt-16">
         <DividerWithText text="Payments of Dues" />
         <ul className="mt-8 space-y-3 font-medium">
           {payments.map((text, index) => (
@@ -76,7 +76,7 @@ const Admission = () => {
         </ul>
       </div>
       {/* Fee Concession*/}
-      <div className="lg:ml-6 lg:col-start-2 lg:max-w-4xl py-16">
+      <div className="lg:ml-6 lg:col-start-2 lg:max-w-4xl pt-16">
         <DividerWithText text="Fee Concession" />
         <ul className="mt-8 space-y-3 font-medium">
           {fee_concession.map((text, index) => (
