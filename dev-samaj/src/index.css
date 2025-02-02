@@ -107,3 +107,20 @@ body{
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
 }
+
+
+
+/* Custom styles for the testimonial slider */
+.teacherSlider .testimonial-slider .slick-track {
+    display: flex !important;
+    gap: 0;
+  }
+  
+  .teacherSlider .testimonial-slider .slick-slide {
+    height: inherit !important;
+    padding: 1rem 0;
+  }
+  
+  .teacherSlider .testimonial-slider .slick-slide > div {
+    height: 100%;
+  }

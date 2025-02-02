@@ -26,6 +26,7 @@ import UiContextProvider from "./context/UiContext";
 import store from "./store/store";
 import { Provider } from "react-redux";
 import ImageGallery from "./Pages/ImageGallery";
+import Academics from "./Pages/Academics";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="about-devSamaj" element={<AboutUs />}></Route>
         <Route path="admission" element={<Admission />}></Route>
         <Route path="criteria" element={<AdmissionCriteria />}></Route>
-        {/* <Route path="images" element={<Courses />}></Route> */}
+        <Route path="pre-primary" element={<Academics />}></Route>
         {/* <Route path="video-gellery" element={<ExtraCarriculum />}></Route> */}
         <Route path="facilities" element={<Facilities />}></Route>
         <Route path="history" element={<History />}></Route>

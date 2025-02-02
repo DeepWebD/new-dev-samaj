@@ -23,6 +23,13 @@ const navbarData = [
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREe2EqdlWW7T1ds2-m1UMBXGwP8Y55XNpkcA&s",
       },
+      {
+        id: "event",
+        text: "Events",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
+      },
       // {
       //   id: "history",
       //   text: "History",
@@ -34,8 +41,8 @@ const navbarData = [
   },
 
   {
-    id: "parents",
-    text: "Parents",
+    id: "admission",
+    text: "Admission",
     subNavbar: [
       {
         id: "admission",
@@ -68,22 +75,51 @@ const navbarData = [
     ],
   },
   {
-    id: "events",
-    text: "Events",
+    id: "academics",
+    text: "Academics",
     subNavbar: [
       {
-        id: "upcomingEvents",
-        text: "Upcoming Events",
+        id: "pre-primary",
+        text: "Pre primary",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
       },
       {
-        id: "pastEvents",
-        text: "Past Events",
+        id: "lower-school",
+        text: "Lower School",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
         image:
-          "https://5.imimg.com/data5/PS/AK/UO/SELLER-1469653/school-and-college-events.jpg",
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
+      },
+      {
+        id: "middle-school",
+        text: "Middle School",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
+      },
+
+      {
+        id: "high-school",
+        text: "High School",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
+      },
+      {
+        id: "houses",
+        text: "Houses",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
+      },
+      {
+        id: "extra-curricular",
+        text: "Extra curricular",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
       },
     ],
   },

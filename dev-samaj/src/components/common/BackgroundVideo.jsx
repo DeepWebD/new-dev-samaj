@@ -26,7 +26,7 @@ const BackgroundVideo = ({ videoSrc, overlayText, overlayTextStyle }) => {
   };
 
   return (
-    <div className="relative w-full h-100vh sm:h-[75vh] overflow-hidden">
+    <div className="relative w-full h-100vh sm:h-[60vh] overflow-hidden">
       {/* Background Video */}
       <video
         ref={videoRef}
