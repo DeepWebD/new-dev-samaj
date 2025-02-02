@@ -51,13 +51,13 @@ const navbarData = [
         image:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc6xn-A9aEnc00o24uKzfZgar9C6sR9dnjeQ&s",
       },
-      {
-        id: "transportation",
-        text: "Transportation",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-        image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1WrKp827UA5AU8txRUj5dOcFZfJjut1ICbw&s",
-      },
+      // {
+      //   id: "transportation",
+      //   text: "Transportation",
+      //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+      //   image:
+      //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1WrKp827UA5AU8txRUj5dOcFZfJjut1ICbw&s",
+      // },
       {
         id: "mandatory",
         text: "CBSC Mandatory disclosure",

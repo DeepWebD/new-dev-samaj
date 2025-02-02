@@ -32,21 +32,6 @@ const Navigation = () => {
   const [location, setLocation] = useState("nehruNagar");
   const [showLocationCard, setShowLocationCard] = useState(false);
 
-  // useEffect(() => {
-  //   if (currentPath != "/") {
-  //     dispatch(
-  //       setNavConfig({
-  //         navbarBg: "bg-[#0A3981]",
-  //         navHeight: "h-[80px]",
-  //         imgHeight: "h-[80px]",
-  //         imgWidth: "w-16",
-  //         navTetxColor: "text-white",
-  //         shadow: "shadow-b",
-  //       })
-  //     );
-  //   }
-  // }, [currentPath, dispatch]);
-  // console.log("Current Path Navigation", currentPath);
   const handleNavHover = (e) => {
     dispatch(setShowNavCard(true));
     navbarData.map((item) => {
@@ -65,7 +50,7 @@ const Navigation = () => {
     if (window.scrollY > 50) {
       dispatch(
         setNavConfig({
-          navbarBg: "bg-secondary",
+          navbarBg: "bg-[#0A3981]",
           navHeight: "h-[80px]",
           imgHeight: "h-[80px]",
           imgWidth: "w-16",
@@ -76,7 +61,7 @@ const Navigation = () => {
     } else if (window.scrollY < 50) {
       dispatch(
         setNavConfig({
-          navbarBg: "bg-secondary",
+          navbarBg: "bg-secondary lg:bg-transparent",
           navHeight: "h-[80px] lg:h-[160px]",
           imgHeight: "h-16 lg:h-28",
           imgWidth: "w-16 lg:w-28",
@@ -86,6 +71,46 @@ const Navigation = () => {
       );
     }
   };
+
+  // eslint-disable-next-line no-undef
+  useEffect(() => {
+    if (currentPath === "/") {
+      if (window.scrollY > 80) {
+        dispatch(
+          setNavConfig({
+            navbarBg: "bg-secondary",
+            navHeight: "h-[80px]",
+            imgHeight: "h-16",
+            imgWidth: "w-16",
+            navTetxColor: "text-white",
+            shadow: "shadow-b",
+          })
+        );
+      } else {
+        dispatch(
+          setNavConfig({
+            navbarBg: "bg-transparent",
+            navHeight: "h-[80px] lg:h-[160px]",
+            imgHeight: "h-16 lg:h-28",
+            imgWidth: "w-16 lg:w-28",
+            navTetxColor: "text-white",
+            shadow: "shadow-none",
+          })
+        );
+      }
+    } else {
+      dispatch(
+        setNavConfig({
+          navbarBg: "bg-secondary",
+          navHeight: "h-[80px]",
+          imgHeight: "h-16",
+          imgWidth: "w-16",
+          navTetxColor: "text-white",
+          shadow: "shadow-b",
+        })
+      );
+    }
+  }, [currentPath, dispatch, window.scrollY]);
 
   // eslint-disable-next-line no-undef
   useEffect(() => {
@@ -150,7 +175,7 @@ const Navigation = () => {
             <div className="flex items-center">
               <div>
                 <img
-                  className={`${navConfig.imgHeight} ${navConfig.imgWidth} transition-all duration-300 `}
+                  className={`${navConfig.imgHeight} ${navConfig.imgWidth} `}
                   src={Logo}
                   alt="Logo"
                 />

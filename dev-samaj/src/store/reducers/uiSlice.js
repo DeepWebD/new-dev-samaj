@@ -42,6 +42,9 @@ export const {
 
 export const selectShowNavCard = (state) => state.ui.showNavCard;
 export const selectShowResponsiveNav = (state) => state.ui.showResponsiveNav;
-export const selectCurrentPath = (state) => state.ui.currentPath;
+export const selectCurrentPath = (state) => {
+  console.log(state);
+  return state.ui.currentPath;
+};
 export const selectNavConfig = (state) => state.ui.navConfig;
 export default uiSlice.reducer;

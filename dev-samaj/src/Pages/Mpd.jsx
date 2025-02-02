@@ -1,9 +1,18 @@
+/* eslint-disable react/prop-types */
 import React from "react";
-
-const Mpd = () => {
+import Table from "../components/common/MPD/Table";
+import BackgroundVideo from "../components/common/BackgroundVideo";
+const Mpd = ({ tableProps }) => {
   return (
-    <div className="flex h-[80vh] justify-center flex-col items-center p-2  mt-[80px] bg-slate-300 font-bold text-4xl text-slate-200">
-      Mpd
+    <div className=" flex justify-center flex-col items-center  ">
+      <BackgroundVideo
+        videoSrc="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" // Replace with your video path
+        overlayText="Welcome to Our Website"
+        overlayTextStyle="text-center"
+      />
+      {/* <div className=" h-screen">
+        <Table tableProps={tableProps} />
+      </div> */}
     </div>
   );
 };
