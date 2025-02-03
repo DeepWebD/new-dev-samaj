@@ -39,21 +39,18 @@ const routes = [
 ];
 export const RouteModal = ({ isModalOpen, setIsModalOpen }) => {
   const closeModal = () => {
-    console.log("-------close-------");
     setIsModalOpen(false);
     document.body.classList.remove("overflow-y-hidden");
   };
 
   // Close modal when pressing ESC key
   const handleKeyDown = (event) => {
-    console.log("-------Key close-------");
     if (event.keyCode === 27) {
       closeModal();
     }
   };
 
   useEffect(() => {
-    console.log("-------adding handleKeyDown event-------");
     document.addEventListener("keydown", handleKeyDown);
     return () => {
       document.removeEventListener("keydown", handleKeyDown);

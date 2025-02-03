@@ -102,14 +102,6 @@ const TeacherSlider = () => {
     ],
   };
 
-  const cardMouseEnterHandler = () => {
-    console.log("Card Mouse Enter");
-  };
-
-  const cardMouseLeaveHandler = () => {
-    console.log("Card Mouse Leave");
-  };
-
   return (
     <div className="py-14">
       <div className=" mx-auto">
@@ -129,11 +121,7 @@ const TeacherSlider = () => {
             {TestimonialsData.map((item) => (
               <div key={item.id}>
                 <div className="mx-2">
-                  <div
-                    className="relative h-[300px]  border border-gray-300 scale-100 hover:scale-105 transition-all delay-100"
-                    onMouseEnter={cardMouseEnterHandler}
-                    onMouseLeave={cardMouseLeaveHandler}
-                  >
+                  <div className="relative h-[300px]  border border-gray-300 scale-100 hover:scale-105 transition-all delay-100">
                     <img
                       src={item.img}
                       alt={item.name}

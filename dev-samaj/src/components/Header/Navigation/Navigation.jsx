@@ -31,6 +31,7 @@ const Navigation = () => {
   const navbarCardRef = useRef(null);
   const [location, setLocation] = useState("nehruNagar");
   const [showLocationCard, setShowLocationCard] = useState(false);
+  const pathname = window.location.pathname;
 
   const handleNavHover = (e) => {
     dispatch(setShowNavCard(true));
@@ -74,7 +75,7 @@ const Navigation = () => {
 
   // eslint-disable-next-line no-undef
   useEffect(() => {
-    if (currentPath === "/") {
+    if (currentPath === "/" && pathname == "/") {
       if (window.scrollY > 80) {
         dispatch(
           setNavConfig({
@@ -155,8 +156,6 @@ const Navigation = () => {
   };
 
   const responseNavHandler = (isOpen) => {
-    console.log("clicked", isOpen);
-
     dispatch(setShowResponsiveNav(isOpen));
   };
   return (

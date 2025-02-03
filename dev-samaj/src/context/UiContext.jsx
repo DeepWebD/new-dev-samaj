@@ -28,8 +28,6 @@ const UiContextProvider = ({ children }) => {
   };
 
   const setUiStateHandler = (uiStateArgs) => {
-    // console.log("uiState-------->", uiState);
-    // console.log("uiStateArgs---->", uiStateArgs);
     setUiState(uiStateArgs);
   };
 

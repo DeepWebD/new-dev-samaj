@@ -58,7 +58,6 @@ const Timeline = () => {
   }
 
   const openModal = (e, id) => {
-    console.log(id);
     e.preventDefault();
     const data = timeline.find((item) => item.id == id);
     setModalData(data);

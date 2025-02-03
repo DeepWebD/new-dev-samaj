@@ -3,29 +3,11 @@ import { imageGallery } from "../mockdata/image";
 const Image = () => {
   const [imageGrid, setImageGrid] = useState([]);
 
-  console.log("imageGrid", imageGrid);
   return (
     <div className="flex justify-center flex-col items-center p-2  mt-[180px]">
       <h1 className="text-4xl my-2">Image Gallery</h1>
 
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        {/* {imageGallery.map((images, index) => {
-          return (
-            <div key={index} className="grid gap-4">
-              {images.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <img
-                      className="h-auto max-w-full rounded-lg object-cover object-center"
-                      src={item.imageLink}
-                      alt="gallery-photo"
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })} */}
         <div className="grid gap-4">
           <div>
             <img
