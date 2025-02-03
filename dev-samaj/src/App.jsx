@@ -27,6 +27,7 @@ import store from "./store/store";
 import { Provider } from "react-redux";
 import ImageGallery from "./Pages/ImageGallery";
 import Academics from "./Pages/Academics";
+import EventPage from "./Pages/Eventpage";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -50,7 +51,7 @@ const App = () => {
         <Route path="history" element={<History />}></Route>
         <Route path="mandatory" element={<Mpd />}></Route>
         <Route path="video" element={<VideoGallery />}></Route>
-        <Route path="pastEvents" element={<PastEvents />}></Route>
+        <Route path="event" element={<EventPage />}></Route>
         {/* <Route path="images" element={<Prayers />}></Route> */}
         <Route path="registration-form" element={<RegistrationForm />}></Route>
         <Route path="transportation" element={<Transportation />}></Route>

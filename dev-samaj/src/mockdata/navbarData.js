@@ -131,26 +131,6 @@ const navbarData = [
       },
     ],
   },
-  {
-    id: "registration",
-    text: "Registration",
-    subNavbar: [
-      {
-        id: "Registration-criteria",
-        text: "Registration Criteria",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-        image:
-          "https://www.gbtps.org/wp-content/uploads/2023/01/3fe01aca-29a7-4b2a-8fb2-c8bf843f7c35.png",
-      },
-      {
-        id: "registration-form",
-        text: "Registration Form",
-        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-        image:
-          "https://3.files.edl.io/1e3b/19/08/15/173429-2b6a26a0-be1e-4139-9333-1c4f81c30b8d.png",
-      },
-    ],
-  },
 ];
 
 export default navbarData;
