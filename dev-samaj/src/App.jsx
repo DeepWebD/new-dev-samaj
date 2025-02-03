@@ -11,7 +11,7 @@ import NotFound from "./Pages/NotFound";
 import VideoGallery from "./Pages/VideoGallery";
 import AboutUs from "./Pages/AboutUs";
 import Admission from "./Pages/Admission";
-import AdmissionCriteria from "./Pages/Admission";
+import AdmissionCriteria from "./Pages/AdmissionCriteria";
 import Courses from "./Pages/Courses";
 import ExtraCarriculum from "./Pages/ExtraCarriculum";
 import Facilities from "./Pages/Facilities";
@@ -36,7 +36,10 @@ const App = () => {
         <Route path="images" element={<ImageGallery />}></Route>
         <Route path="about-devSamaj" element={<AboutUs />}></Route>
         <Route path="admission" element={<Admission />}></Route>
-        <Route path="criteria" element={<AdmissionCriteria />}></Route>
+        <Route
+          path="registration-criteria"
+          element={<AdmissionCriteria />}
+        ></Route>
         <Route path="pre-primary" element={<Academics />}></Route>
         <Route path="lower-school" element={<Academics />}></Route>
         <Route path="middle-school" element={<Academics />}></Route>
@@ -49,7 +52,7 @@ const App = () => {
         <Route path="video" element={<VideoGallery />}></Route>
         <Route path="pastEvents" element={<PastEvents />}></Route>
         {/* <Route path="images" element={<Prayers />}></Route> */}
-        <Route path="registration" element={<RegistrationForm />}></Route>
+        <Route path="registration-form" element={<RegistrationForm />}></Route>
         <Route path="transportation" element={<Transportation />}></Route>
         <Route path="upcomingEvents" element={<UpcomingEvent />}></Route>
         <Route path="*" element={<NotFound />} />

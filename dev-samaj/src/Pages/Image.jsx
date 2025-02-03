@@ -1,10 +1,6 @@
-import { useState } from "react";
-import { imageGallery } from "../mockdata/image";
 const Image = () => {
-  const [imageGrid, setImageGrid] = useState([]);
-
   return (
-    <div className="flex justify-center flex-col items-center p-2  mt-[180px]">
+    <div className="flex justify-center flex-col items-center p-2  mt-[80px]">
       <h1 className="text-4xl my-2">Image Gallery</h1>
 
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
