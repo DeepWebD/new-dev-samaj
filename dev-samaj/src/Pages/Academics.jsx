@@ -3,158 +3,45 @@ import Subnav from "../components/common/Subnav";
 import AboutAcademics from "../components/common/Academics/AboutAcademics";
 import AcademicSlider from "../components/common/Academics/AcademicSlider";
 import TeacherSlider from "../components/common/Academics/TeacherSlider";
-// import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-// import TeacherCard from "../components/common/Academics/TeacherCard";
 import Faq from "../components/common/Academics/Faq";
-
-const subNavbarData = [
-  {
-    id: "pre-primary",
-    text: "Pre primary",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
-  },
-  {
-    id: "lower-school",
-    text: "Lower School",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
-  },
-  {
-    id: "middle-school",
-    text: "Middle School",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
-  },
-
-  {
-    id: "high-school",
-    text: "High School",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
-  },
-  {
-    id: "houses",
-    text: "Houses",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
-  },
-  {
-    id: "extra-curricular",
-    text: "Extra curricular",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiZ_7MC8Fl_xC8L93ouryMuOm0p4U3s7jAUA&s",
-  },
-];
-
-const aboutAcademicData = {
-  title: "Montessori School",
-  subTitle: "  Establishing a Love of Learning",
-  para1: ` Imagine a classroom where the joy of learning is propelled by the
-    interests of the children, where curiosity is encouraged and the innate
-    human desire to understand, experiment and create is celebrated. This is
-    The Summit Montessori School, and we are proud to use the Montessori
-    philosophy to teach children as young as 18 months.`,
-  para2: `The Summit Montessori School gives children the opportunity to learn
-    from their peers, engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1.`,
-};
-
-const pillers = [
-  {
-    id: "1",
-    title: `The Summit Montessori`,
-    desc: `The Summit Montessori School gives children the opportunity to learn
-    from their peers, engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1.`,
-    quote: `engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1`,
-    techaerName: "Mr Shankar Sharma",
-    imageUrl:
-      "https://thumbs.dreamstime.com/b/male-student-working-desk-chinese-school-26363958.jpg",
-  },
-  {
-    id: "2",
-    title: `The Summit Montessori`,
-    desc: `The Summit Montessori School gives children the opportunity to learn
-    from their peers, engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1.`,
-    quote: `engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1`,
-    techaerName: "Mr Shankar Sharma",
-    imageUrl:
-      "https://thumbs.dreamstime.com/b/child-girl-schoolgirl-elementary-school-student-123686003.jpg",
-  },
-  {
-    id: "3",
-    title: `The Summit Montessori`,
-    desc: `The Summit Montessori School gives children the opportunity to learn
-    from their peers, engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1.`,
-    quote: `engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1`,
-    techaerName: "Mr Shankar Sharma",
-    imageUrl:
-      "https://thumbs.dreamstime.com/b/male-student-working-desk-chinese-school-26363958.jpg",
-  },
-  {
-    id: "4",
-    title: `The Summit Montessori`,
-    desc: `The Summit Montessori School gives children the opportunity to learn
-    from their peers, engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1.`,
-    quote: `engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1`,
-    techaerName: "Mr Shankar Sharma",
-    imageUrl:
-      "https://thumbs.dreamstime.com/b/male-student-working-desk-chinese-school-26363958.jpg",
-  },
-  {
-    id: "5",
-    title: `The Summit Montessori`,
-    desc: `The Summit Montessori School gives children the opportunity to learn
-    from their peers, engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1.`,
-    quote: `engage in meaningful open-ended play and develop a
-    solid foundation in academic and social/emotional learning that serves
-    them well when they move on to Lower School starting in Grade 1`,
-    techaerName: "Mr Shankar Sharma",
-    imageUrl:
-      "https://thumbs.dreamstime.com/b/child-girl-schoolgirl-elementary-school-student-123686003.jpg",
-  },
-];
+// import {
+//   teacherSliderData,
+//   pillers,
+//   faqs,
+//   subNavbarData,
+//   aboutAcademicData,
+//   backgroundVideoData,
+// } from "../mockdata/academic";
+import { useSelector } from "react-redux";
+import { selectAcadmics } from "../store/reducers/academiSlice";
 
 const Academics = () => {
+  const pathName = window.location.pathname;
+  let schoolData;
+  let acadmicdata = useSelector(selectAcadmics);
+
+  if (pathName === "/pre-primary") {
+    schoolData = acadmicdata["pre-primary"];
+  } else if (pathName === "/lower-school") {
+    schoolData = acadmicdata["lower-school"];
+  } else if (pathName === "/middle-school") {
+    schoolData = acadmicdata["middle-school"];
+  } else {
+    schoolData = acadmicdata["high-school"];
+  }
+
   return (
     <>
       <div className="mt-[80px]">
         <BackgroundVideo
-          videoSrc="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4" // Replace with your video path
-          overlayText="Welcome to Our Website"
-          overlayTextStyle="text-center"
+          videoSrc={schoolData?.backgroundVideoData.videoSrcUrl}
         />
         <div className="container my-16">
           <div className="hidden sm:block">
-            <Subnav subNavbarData={subNavbarData} />
+            <Subnav subNavbarData={schoolData?.subNavbarData} />
           </div>
           <div className="my-16">
-            <AboutAcademics aboutAcademicData={aboutAcademicData} />
+            <AboutAcademics aboutAcademicData={schoolData?.aboutAcademicData} />
           </div>
           <div className="my-16">
             <h2 className="text-3xl text-secondary mb-4">
@@ -166,15 +53,15 @@ const Academics = () => {
               Our mission is to develop leaders of character across five
               pillars: spiritual, academic, physical, social and artistic.
             </p>
-            <AcademicSlider slides={pillers} />
+            <AcademicSlider slides={schoolData?.pillers} />
           </div>
         </div>
       </div>
       <div className="my-16">
-        <TeacherSlider />
+        <TeacherSlider sliderData={schoolData?.teacherSliderData} />
       </div>
       <div className="my-16">
-        <Faq />
+        <Faq faqs={schoolData?.faqs} />
       </div>
     </>
   );

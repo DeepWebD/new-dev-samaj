@@ -38,6 +38,10 @@ const App = () => {
         <Route path="admission" element={<Admission />}></Route>
         <Route path="criteria" element={<AdmissionCriteria />}></Route>
         <Route path="pre-primary" element={<Academics />}></Route>
+        <Route path="lower-school" element={<Academics />}></Route>
+        <Route path="middle-school" element={<Academics />}></Route>
+        <Route path="high-school" element={<Academics />}></Route>
+
         {/* <Route path="video-gellery" element={<ExtraCarriculum />}></Route> */}
         <Route path="facilities" element={<Facilities />}></Route>
         <Route path="history" element={<History />}></Route>

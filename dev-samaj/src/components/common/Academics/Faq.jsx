@@ -1,34 +1,35 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from "react";
 import AccordionItem from "../AccordionItem";
 
-const faqs = [
-  {
-    id: "faq-1",
-    question: "How can I reset my password?",
-    answer:
-      "To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.",
-  },
-  {
-    id: "faq-2",
-    question: "How do I update my billing information?",
-    answer:
-      "To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.",
-  },
-  {
-    id: "faq-3",
-    question: "How can I contact customer support?",
-    answer:
-      "To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.",
-  },
-  {
-    id: "faq-4",
-    question: "How do I delete my account?",
-    answer:
-      "To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.",
-  },
-];
+// const faqs = [
+//   {
+//     id: "faq-1",
+//     question: "How can I reset my password?",
+//     answer:
+//       "To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.",
+//   },
+//   {
+//     id: "faq-2",
+//     question: "How do I update my billing information?",
+//     answer:
+//       "To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.",
+//   },
+//   {
+//     id: "faq-3",
+//     question: "How can I contact customer support?",
+//     answer:
+//       "To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.",
+//   },
+//   {
+//     id: "faq-4",
+//     question: "How do I delete my account?",
+//     answer:
+//       "To create an account, find the 'Sign up' or 'Create account' button, fill out the registration form with your personal information, and click 'Create account' or 'Sign up.' Verify your email address if needed, and then log in to start using the platform.",
+//   },
+// ];
 
-const Faq = () => {
+const Faq = ({ faqs }) => {
   const [openId, setOpenId] = useState("faq-1");
 
   const handleAccordionClick = (id) => {

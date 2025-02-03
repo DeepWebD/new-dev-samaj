@@ -1,10 +1,15 @@
-import React, { useRef, useState } from "react";
+/* eslint-disable react/prop-types */
+import React, { useRef, useState, useEffect } from "react";
 import { FaPause, FaPlay } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 
-const BackgroundVideo = ({ videoSrc, overlayText, overlayTextStyle }) => {
+const BackgroundVideo = ({ videoSrc }) => {
   const videoRef = useRef(null); // Reference to the video element
   const [isPlaying, setIsPlaying] = useState(true); // State to track play/pause
+
+  useEffect(() => {
+    videoRef.current.src = videoSrc;
+  }, [videoSrc]);
 
   // Function to toggle play/pause
   const togglePlayPause = () => {
