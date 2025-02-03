@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,7 +8,7 @@ const TestimonialsData = [
     id: 1,
     name: "John Doe",
     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque reiciendis inventore iste ratione ex alias quis magni at optio",
-    img: "https://picsum.photos/101/101",
+    img: "https://media.istockphoto.com/id/486325400/photo/teacher-asking-her-students-a-question.jpg?s=612x612&w=0&k=20&c=gA6YxA-uGplqjyZfTKBuOcAXEZz7S_KqgGgEGl8YztQ=",
     title: "Student",
     delay: 0.2,
   },
@@ -55,6 +55,7 @@ const TestimonialsData = [
 ];
 
 const TeacherSlider = () => {
+  // const [cardStyle, setCardStyle] = useState({colorGradientHeight:});
   const slider = React.useRef(null);
 
   const next = () => {
@@ -72,8 +73,8 @@ const TeacherSlider = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
-    autoplay: true,
-    autoplaySpeed: 3000,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
     cssEase: "linear",
     arrows: false,
     responsive: [
@@ -101,16 +102,25 @@ const TeacherSlider = () => {
     ],
   };
 
+  const cardMouseEnterHandler = () => {
+    console.log("Card Mouse Enter");
+  };
+
+  const cardMouseLeaveHandler = () => {
+    console.log("Card Mouse Leave");
+  };
+
   return (
     <div className="py-14">
       <div className=" mx-auto">
         {/* Header section */}
-        <div className="space-y-4 px-4 text-center max-w-[600px] mx-auto mb-12">
-          <h1 className="uppercase font-semibold text-orange-600 tracking-wide">
-            OUR TESTIMONIALS
+        <div className="space-y-4 px-4 text-center max-w-4xl mx-auto mb-12">
+          <h1 className="uppercase text-3xl text-secondary tracking-wide">
+            Meet The Teachers
           </h1>
-          <p className="font-semibold text-4xl">
-            What Our Students Say About Us
+          <p className="text-xl tracking-wider text-gray-700">
+            What sets The Summit Country Day School apart? Highly-trained
+            faculty, state-of-the-art resources and innovative curriculum.
           </p>
         </div>
         {/* Testimonial cards section */}
@@ -120,45 +130,27 @@ const TeacherSlider = () => {
               <div key={item.id}>
                 <div className="mx-2">
                   <div
-                    className="relative p-6 h-[300px] "
-                    style={{
-                      backgroundImage: `url(${item.img})`,
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat",
-                    }}
+                    className="relative h-[300px]  border border-gray-300 scale-100 hover:scale-105 transition-all delay-100"
+                    onMouseEnter={cardMouseEnterHandler}
+                    onMouseLeave={cardMouseLeaveHandler}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-600 via-gray-900/40" />
+                    <img
+                      src={item.img}
+                      alt={item.name}
+                      className="absolute h-[300px] w-full"
+                    />
+                    <div className="absolute z-10 bg-gradient-to-t from-gray-700  hover:from-blue-800 to-transparent w-full bottom-[-2px]  h-[150px] " />
                     {/* Upper section */}
-                    <div className="z-11 w-full h-full flex flex-row justify-between items-end text-white">
+                    <div className="absolute h-full w-full flex flex-row justify-between items-end text-white z-20 p-4">
                       <div>
-                        <p>Name</p>
-                        <p>Role</p>
+                        <p className="font-bold text-2xl">Mr Mohit Verma</p>
+                        <p>Hindi Teacher</p>
                       </div>
                       <div>
-                        <button className="bg-primary px-4 py-2 rounded">
+                        <button className="bg-primary px-4 py-2 rounded scale-100 shadow-sm hover:shadow-md hover:scale-110 transition-all delay-100">
                           See More
                         </button>
                       </div>
-                      {/* <div className="flex items-center gap-4 mb-4 z-10">
-                        <div>
-                          <p className="text-xl font-bold text-white">
-                            {item.name}
-                          </p>
-                          <p className="text-white">{item.title}</p>
-                        </div>
-                      </div> */}
-
-                      {/* Bottom section */}
-                      {/* <div className="flex flex-col justify-between flex-grow">
-                        <div className="flex items-center mt-4">
-                          <a
-                            href="#"
-                            className="z-10 bg-primary text-white px-4 py-2"
-                          >
-                            See More
-                          </a>
-                        </div>
-                      </div> */}
                     </div>
                   </div>
                 </div>

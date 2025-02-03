@@ -3,8 +3,9 @@ import Subnav from "../components/common/Subnav";
 import AboutAcademics from "../components/common/Academics/AboutAcademics";
 import AcademicSlider from "../components/common/Academics/AcademicSlider";
 import TeacherSlider from "../components/common/Academics/TeacherSlider";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import TeacherCard from "../components/common/Academics/TeacherCard";
+// import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+// import TeacherCard from "../components/common/Academics/TeacherCard";
+import Faq from "../components/common/Academics/Faq";
 
 const subNavbarData = [
   {
@@ -156,6 +157,15 @@ const Academics = () => {
             <AboutAcademics aboutAcademicData={aboutAcademicData} />
           </div>
           <div className="my-16">
+            <h2 className="text-3xl text-secondary mb-4">
+              <span className="border-b-0 hover:border-b-2 hover:border-primary">
+                Our Five Pillars
+              </span>
+            </h2>
+            <p className="text-xl tracking-wider text-gray-700 mb-4">
+              Our mission is to develop leaders of character across five
+              pillars: spiritual, academic, physical, social and artistic.
+            </p>
             <AcademicSlider slides={pillers} />
           </div>
         </div>
@@ -164,7 +174,7 @@ const Academics = () => {
         <TeacherSlider />
       </div>
       <div className="my-16">
-        <TeacherCard />
+        <Faq />
       </div>
     </>
   );
