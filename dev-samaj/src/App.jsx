@@ -29,6 +29,7 @@ import ImageGallery from "./Pages/ImageGallery";
 import Academics from "./Pages/Academics";
 import EventPage from "./Pages/Eventpage";
 import { VideoGalleryPage } from "./Pages/VideoGallery";
+import Houses from "./Pages/Houses";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -45,13 +46,14 @@ const App = () => {
         <Route path="lower-school" element={<Academics />}></Route>
         <Route path="middle-school" element={<Academics />}></Route>
         <Route path="high-school" element={<Academics />}></Route>
-
         {/* <Route path="video-gellery" element={<ExtraCarriculum />}></Route> */}
         <Route path="facilities" element={<Facilities />}></Route>
         <Route path="history" element={<History />}></Route>
         <Route path="mandatory" element={<Mpd />}></Route>
         <Route path="video" element={<VideoGalleryPage />}></Route>
         <Route path="event" element={<EventPage />}></Route>
+        <Route path="extra-curricular" element={<ExtraCarriculum />}></Route>
+        <Route path="houses" element={<Houses />}></Route>
         {/* <Route path="images" element={<Prayers />}></Route> */}
         {/* <Route path="registration-form" element={<RegistrationForm />}></Route> */}
         {/* <Route path="transportation" element={<Transportation />}></Route> */}
