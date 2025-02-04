@@ -37,10 +37,10 @@ const App = () => {
         <Route path="images" element={<ImageGallery />}></Route>
         <Route path="about-devSamaj" element={<AboutUs />}></Route>
         <Route path="admission" element={<Admission />}></Route>
-        <Route
+        {/* <Route
           path="registration-criteria"
           element={<AdmissionCriteria />}
-        ></Route>
+        ></Route> */}
         <Route path="pre-primary" element={<Academics />}></Route>
         <Route path="lower-school" element={<Academics />}></Route>
         <Route path="middle-school" element={<Academics />}></Route>
@@ -53,9 +53,9 @@ const App = () => {
         <Route path="video" element={<VideoGalleryPage />}></Route>
         <Route path="event" element={<EventPage />}></Route>
         {/* <Route path="images" element={<Prayers />}></Route> */}
-        <Route path="registration-form" element={<RegistrationForm />}></Route>
-        <Route path="transportation" element={<Transportation />}></Route>
-        <Route path="upcomingEvents" element={<UpcomingEvent />}></Route>
+        {/* <Route path="registration-form" element={<RegistrationForm />}></Route> */}
+        {/* <Route path="transportation" element={<Transportation />}></Route> */}
+        {/* <Route path="upcomingEvents" element={<UpcomingEvent />}></Route> */}
         <Route path="*" element={<NotFound />} />
       </Route>
     )
