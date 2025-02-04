@@ -3,6 +3,21 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
   {
+    url: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
+    alt: "photo gallery image 08",
+    title: "Forest Lake",
+  },
+  {
+    url: "https://images.pexels.com/photos/4256852/pexels-photo-4256852.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    alt: "photo gallery image 09",
+    title: "Mountain Stream",
+  },
+  {
+    url: "https://images.unsplash.com/photo-1541795083-1b160cf4f3d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80",
+    alt: "photo gallery image 10",
+    title: "Alpine Meadow",
+  },
+  {
     url: "https://images.pexels.com/photos/2356059/pexels-photo-2356059.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     alt: "photo gallery image 01",
     title: "Mountain Lake at Sunset",
@@ -104,6 +119,51 @@ const images = [
   },
 ];
 
+const sampleImages = [
+  [
+    { src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" },
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg",
+    },
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg",
+    },
+  ],
+  [
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg",
+    },
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg",
+    },
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg",
+    },
+  ],
+  [
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg",
+    },
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg",
+    },
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg",
+    },
+  ],
+  [
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg",
+    },
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg",
+    },
+    {
+      src: "https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg",
+    },
+  ],
+];
+
 function ImageGallery() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -187,6 +247,27 @@ function ImageGallery() {
       </section>
 
       <section className="w-full px-4 py-6">
+        <div className="p-5">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {sampleImages.map((images, index) => {
+              return (
+                <div key={index} className="grid gap-4">
+                  {images.map((image, index) => {
+                    return (
+                      <div key={index}>
+                        <img
+                          className="h-auto max-w-full rounded-lg"
+                          src={image.src}
+                          alt=""
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+              );
+            })}
+          </div>
+        </div>
         <div className="max-w-[2000px] mx-auto">
           <div className="flex gap-3">
             {imageColumns.map((column, colIndex) => (
@@ -254,3 +335,100 @@ function ImageGallery() {
 }
 
 export default ImageGallery;
+
+// <div className="mt-[100px] p-5">
+//       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+//         <div className="grid gap-4">
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg"
+//               alt=""
+//             />
+//           </div>
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg"
+//               alt=""
+//             />
+//           </div>
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg"
+//               alt=""
+//             />
+//           </div>
+//         </div>
+//         <div className="grid gap-4">
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg"
+//               alt=""
+//             />
+//           </div>
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg"
+//               alt=""
+//             />
+//           </div>
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg"
+//               alt=""
+//             />
+//           </div>
+//         </div>
+//         <div className="grid gap-4">
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg"
+//               alt=""
+//             />
+//           </div>
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg"
+//               alt=""
+//             />
+//           </div>
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg"
+//               alt=""
+//             />
+//           </div>
+//         </div>
+//         <div className="grid gap-4">
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg"
+//               alt=""
+//             />
+//           </div>
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg"
+//               alt=""
+//             />
+//           </div>
+//           <div>
+//             <img
+//               className="h-auto max-w-full rounded-lg"
+//               src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg"
+//               alt=""
+//             />
+//           </div>
+//         </div>
+//       </div>
+//     </div>

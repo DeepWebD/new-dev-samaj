@@ -28,7 +28,7 @@ import { Provider } from "react-redux";
 import ImageGallery from "./Pages/ImageGallery";
 import Academics from "./Pages/Academics";
 import EventPage from "./Pages/Eventpage";
-
+import { VideoGalleryPage } from "./Pages/VideoGallery";
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -50,7 +50,7 @@ const App = () => {
         <Route path="facilities" element={<Facilities />}></Route>
         <Route path="history" element={<History />}></Route>
         <Route path="mandatory" element={<Mpd />}></Route>
-        <Route path="video" element={<VideoGallery />}></Route>
+        <Route path="video" element={<VideoGalleryPage />}></Route>
         <Route path="event" element={<EventPage />}></Route>
         {/* <Route path="images" element={<Prayers />}></Route> */}
         <Route path="registration-form" element={<RegistrationForm />}></Route>
