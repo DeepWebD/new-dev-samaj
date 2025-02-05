@@ -38,6 +38,7 @@ const BackgroundVideo = ({ videoSrc }) => {
         autoPlay
         loop
         muted
+        playsInline
         className="w-full h-full object-cover"
       >
         <source src={videoSrc} type="video/mp4" />
