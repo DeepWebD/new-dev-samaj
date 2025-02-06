@@ -10,6 +10,8 @@ import { MdKeyboardArrowDown, MdKeyboardArrowRight } from "react-icons/md";
 
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
+
+import { showPublicChrome } from "../../../utility/showChrome";
 import {
   selectShowNavCard,
   selectShowResponsiveNav,
@@ -33,6 +35,7 @@ const Navigation = () => {
   const [showLocationCard, setShowLocationCard] = useState(false);
   const pathname = window.location.pathname;
 
+  console.log("pathname------------>", pathname);
   const handleNavHover = (e) => {
     dispatch(setShowNavCard(true));
     navbarData.map((item) => {
@@ -158,7 +161,14 @@ const Navigation = () => {
   const responseNavHandler = (isOpen) => {
     dispatch(setShowResponsiveNav(isOpen));
   };
-  return (
+
+  const handleLoginClick = (e) => {
+    e.preventDefault();
+    dispatch(setCurrentPath("/login"));
+    window.open("/login", "_blank");
+  };
+
+  const navContent = (
     <>
       <div ref={navbarCardRef} onMouseLeave={handleNavCardMouseLeave}>
         <Navcard showCard={showNavCard} subNavbarData={subNavbarData} />
@@ -255,6 +265,7 @@ const Navigation = () => {
                 </a>
                 <a
                   href="#"
+                  onClick={(e) => handleLoginClick(e)}
                   className={`${navConfig.navTetxColor} hover:text-orange-400 py-1 px-10 border rounded-[25px] text-lg font-medium `}
                 >
                   Login
@@ -285,6 +296,8 @@ const Navigation = () => {
       <ResponsiveMenu navbarData={navbarData} />
     </>
   );
+
+  return <>{showPublicChrome(pathname) && navContent}</>;
 };
 
 export default Navigation;

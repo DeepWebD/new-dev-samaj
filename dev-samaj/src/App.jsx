@@ -1,3 +1,4 @@
+import React, { lazy, Suspense } from "react";
 import Home from "./Pages/Home";
 import RootLayout from "./Layout/RootLayout";
 import {
@@ -29,7 +30,10 @@ import ImageGallery from "./Pages/ImageGallery";
 import Academics from "./Pages/Academics";
 import EventPage from "./Pages/Eventpage";
 import { VideoGalleryPage } from "./Pages/VideoGallery";
-import Houses from "./Pages/Houses";
+import Houses from "./Pages/Houses/Houses";
+// Lazy load the Login component
+const Login = lazy(() => import("./Pages/Login/Login"));
+
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -54,6 +58,14 @@ const App = () => {
         <Route path="event" element={<EventPage />}></Route>
         <Route path="extra-curricular" element={<ExtraCarriculum />}></Route>
         <Route path="houses" element={<Houses />}></Route>
+        <Route
+          path="login"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <Login />
+            </Suspense>
+          }
+        ></Route>
         {/* <Route path="images" element={<Prayers />}></Route> */}
         {/* <Route path="registration-form" element={<RegistrationForm />}></Route> */}
         {/* <Route path="transportation" element={<Transportation />}></Route> */}

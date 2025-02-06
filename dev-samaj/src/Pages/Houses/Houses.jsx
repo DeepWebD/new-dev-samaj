@@ -1,6 +1,10 @@
-import React from "react";
-import BackgroundVideo from "../components/common/BackgroundVideo";
-import Subnav from "../components/common/Subnav";
+import BackgroundVideo from "../../components/common/BackgroundVideo";
+import Subnav from "../../components/common/Subnav";
+import { Award } from "lucide-react";
+
+import { houses, competitions } from "../../mockdata/houses";
+import { HouseCard } from "./HouseCard";
+import { CompetitionCard } from "./CompetitionCard";
 
 const subNavbarData = [
   {
@@ -57,6 +61,36 @@ const Houses = () => {
           <Subnav subNavbarData={subNavbarData} />
         </div>
       </div>
+      {/* Houses Section */}
+      <section className="py-16 container mx-auto px-4">
+        <div className="flex items-center gap-4 mb-8">
+          <h2 className="text-3xl font-bold text-gray-800">Our Houses</h2>
+          <div className="flex-1 h-px bg-gray-200"></div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {houses.map((house) => (
+            <HouseCard key={house.id} house={house} />
+          ))}
+        </div>
+      </section>
+
+      {/* Competitions Section */}
+      <section className="py-16 bg-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center gap-4 mb-8">
+            <h2 className="text-3xl font-bold text-gray-800">
+              Current Competitions
+            </h2>
+            <Award className="w-8 h-8 text-yellow-500" />
+            <div className="flex-1 h-px bg-gray-200"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {competitions.map((competition) => (
+              <CompetitionCard key={competition.id} competition={competition} />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
