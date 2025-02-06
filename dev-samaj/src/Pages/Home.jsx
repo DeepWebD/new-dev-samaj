@@ -12,7 +12,7 @@ import { useLocation } from "react-router-dom";
 import HeroImg from "../assets/hero.png";
 
 const heroData = {
-  title: "Welome To Dev Samaj School",
+  title: "Welome to Dev Samaj School",
   description: `Established in 1966, an English medium school in Nehru Nagar, Delhi, stands at Ring Road, Nehru Nagar, Delhi - 110065, nurturing young minds with excellence. The name "Dev Samaj" also honors a legacy of social reform, founded in Lahore in 1887 by Pandit Shiv Narayan Agnihotri. Dedicated to serving humanity, it transcends caste, creed, color, and country, embodying universal compassion and progress.`,
   heroImage: HeroImg,
   isButtonsNeed: true,

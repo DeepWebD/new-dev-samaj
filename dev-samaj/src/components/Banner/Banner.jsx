@@ -20,14 +20,14 @@ const Banner = ({ subtitle, tag, reverse }) => {
           </div>
           {/* Banner text section */}
           <div className="flex flex-col justify-center text-center md:text-left space-y-4 lg:max-w-[500px] p-2">
-            <motion.p
+            <motion.h2
               variants={SlideUp(0.5)}
               initial="hidden"
               whileInView={"visible"}
-              className="text-5xl lg:text-6xl text-secondary font-semibold capitalize"
+              className=" text-secondary font-semibold capitalize"
             >
               {tag}
-            </motion.p>
+            </motion.h2>
 
             <motion.p
               variants={SlideUp(0.9)}
