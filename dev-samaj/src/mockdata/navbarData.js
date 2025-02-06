@@ -24,6 +24,13 @@ const navbarData = [
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREe2EqdlWW7T1ds2-m1UMBXGwP8Y55XNpkcA&s",
       },
       {
+        id: "prayers",
+        text: "Prayers",
+        desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",
+        image:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiD-YW8Rwtp_r-mcV__1gagUM3b0-YscFtzA&s",
+      },
+      {
         id: "event",
         text: "Events",
         desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus euismod, ultricies mi nec, tincidunt nunc",

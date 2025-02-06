@@ -19,7 +19,6 @@ import Facilities from "./Pages/Facilities";
 import History from "./Pages/History";
 import Mpd from "./Pages/Mpd";
 import PastEvents from "./Pages/PastEvents";
-import Prayers from "./Pages/Prayers";
 import RegistrationForm from "./Pages/RegistrationForm";
 import Transportation from "./Pages/Transportation";
 import UpcomingEvent from "./Pages/UpcomingEvent";
@@ -31,6 +30,7 @@ import Academics from "./Pages/Academics";
 import EventPage from "./Pages/Eventpage";
 import { VideoGalleryPage } from "./Pages/VideoGallery";
 import Houses from "./Pages/Houses/Houses";
+import Prayers from "./Pages/Prayers/Prayers";
 // Lazy load the Login component
 const Login = lazy(() => import("./Pages/Login/Login"));
 
@@ -58,6 +58,7 @@ const App = () => {
         <Route path="event" element={<EventPage />}></Route>
         <Route path="extra-curricular" element={<ExtraCarriculum />}></Route>
         <Route path="houses" element={<Houses />}></Route>
+        <Route path="prayers" element={<Prayers />}></Route>
         <Route
           path="login"
           element={
