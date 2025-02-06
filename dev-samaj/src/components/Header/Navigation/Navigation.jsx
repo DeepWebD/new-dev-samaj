@@ -190,7 +190,7 @@ const Navigation = () => {
                   <p>Nehru Nagar</p>
                   <a
                     href="#"
-                    className="relative flex justify-center items-center text-primary"
+                    className="relative flex justify-center items-center text-white"
                     onClick={() => setShowLocationCard(!showLocationCard)}
                   >
                     <p>Change</p>

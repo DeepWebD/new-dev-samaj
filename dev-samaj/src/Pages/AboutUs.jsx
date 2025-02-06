@@ -51,21 +51,21 @@ const AboutUs = () => {
               <span className="border-b-[1px] border-secondary">About</span>
             </h2>
             <h3 className="text-3xl lg:text-4xl  font-bold !leading-tight text-secondary">
-              <span>Our Phylosophy</span>
+              <span>Our Philosophy</span>
             </h3>
             <p className="font-light text-lg">
               An English medium school in Nehru Nagar, Delhi, that was
               established in 1966. The school's address is Ring Road, Nehru
-              Nagar, Delhi - 110065. Dev Samaj may also refer to a religious and
+              Nagar, Delhi - 110065. 
+              </p>
+              <p className="font-light text-lg">
+              Dev Samaj may also refer to a religious and
               social reform society founded in Lahore in 1887 by Pandit Shiv
-              Narayan Agnihotri. The society's goal is to serve humanity without
-              regard to caste, creed, color, or country. An English medium
-              school in Nehru Nagar, Delhi, that was established in 1966. The
-              school's address is Ring Road, Nehru Nagar, Delhi - 110065. Dev
-              Samaj may also refer to a religious and social reform society
-              founded in Lahore in 1887 by Pandit Shiv Narayan Agnihotri. The
-              society's goal is to serve humanity without regard to caste,
-              creed, color, or country.
+              Narayan Agnihotri. 
+              </p>
+              <p className="font-light text-lg">
+              The society's goal is to serve humanity without
+              regard to caste, creed, color, or country. 
             </p>
           </div>
         </motion.div>

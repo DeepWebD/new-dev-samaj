@@ -13,12 +13,7 @@ import HeroImg from "../assets/hero.png";
 
 const heroData = {
   title: "Welome To Dev Samaj School",
-  description: `   An English medium school in Nehru Nagar, Delhi, that was
-  established in 1966. The school's address is Ring Road, Nehru
-  Nagar, Delhi - 110065. Dev Samaj may also refer to a religious and
-  social reform society founded in Lahore in 1887 by Pandit Shiv
-  Narayan Agnihotri. The society's goal is to serve humanity without
-  regard to caste, creed, color, or country.`,
+  description: `Established in 1966, an English medium school in Nehru Nagar, Delhi, stands at Ring Road, Nehru Nagar, Delhi - 110065, nurturing young minds with excellence. The name "Dev Samaj" also honors a legacy of social reform, founded in Lahore in 1887 by Pandit Shiv Narayan Agnihotri. Dedicated to serving humanity, it transcends caste, creed, color, and country, embodying universal compassion and progress.`,
   heroImage: HeroImg,
   isButtonsNeed: true,
   isNumberCountNeed: true,
