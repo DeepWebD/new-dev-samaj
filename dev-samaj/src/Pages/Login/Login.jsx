@@ -1,12 +1,33 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { LogIn } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
+import { selectNavConfig } from "../../store/reducers/uiSlice";
+import { useNavigate } from "react-router-dom";
 import {
-  selectCurrentPath,
-  selectNavConfig,
-} from "../../store/reducers/uiSlice";
+  setIsLoggedIn,
+  setUserRole,
+  selectIsLoggedIn,
+} from "../../store/reducers/authSlice";
 const Login = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const navConfig = useSelector(selectNavConfig);
+  const [userType, setUserType] = useState("");
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/school-management/dashboard");
+    }
+  }, [isLoggedIn]);
+
+  const loginHandler = (e) => {
+    e.preventDefault();
+
+    dispatch(setIsLoggedIn(true));
+    dispatch(setUserRole(userType));
+  };
+
   console.log("selectNavConfig", navConfig);
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -40,6 +61,26 @@ const Login = () => {
                 />
               </div>
             </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Select Role
+              </label>
+              <div className="mt-1">
+                <select
+                  onChange={(e) => setUserType(e.target.value)}
+                  required
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                >
+                  <option value="master_admnin">Master Admin </option>
+                  <option value="Admin">Admin </option>
+                  <option value="Student">Student </option>
+                  <option value="Teacher">Teacher</option>
+                </select>
+              </div>
+            </div>
 
             <div>
               <label
@@ -59,7 +100,6 @@ const Login = () => {
                 />
               </div>
             </div>
-
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
@@ -85,9 +125,9 @@ const Login = () => {
                 </a>
               </div>
             </div>
-
             <div>
               <button
+                onClick={(e) => loginHandler(e)}
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >

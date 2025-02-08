@@ -297,7 +297,7 @@ const Navigation = () => {
     </>
   );
 
-  return <>{showPublicChrome(pathname) && navContent}</>;
+  return <>{navContent}</>;
 };
 
 export default Navigation;

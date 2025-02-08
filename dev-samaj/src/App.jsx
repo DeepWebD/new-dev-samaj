@@ -31,6 +31,8 @@ import EventPage from "./Pages/Eventpage";
 import { VideoGalleryPage } from "./Pages/VideoGallery";
 import Houses from "./Pages/Houses/Houses";
 import Prayers from "./Pages/Prayers/Prayers";
+import AppLayout from "./Layout/AppLayout";
+import Dashboard from "./Pages/SchoolManagement/Dashboard";
 // Lazy load the Login component
 const Login = lazy(() => import("./Pages/Login/Login"));
 
@@ -59,14 +61,18 @@ const App = () => {
         <Route path="extra-curricular" element={<ExtraCarriculum />}></Route>
         <Route path="houses" element={<Houses />}></Route>
         <Route path="prayers" element={<Prayers />}></Route>
-        <Route
-          path="login"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Login />
-            </Suspense>
-          }
-        ></Route>
+        <Route path="login" element={<Login />}></Route>
+        <Route path="school-management/" element={<AppLayout />}>
+          <Route
+            path="dashboard"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Dashboard />
+              </Suspense>
+            }
+          ></Route>
+        </Route>
+
         {/* <Route path="images" element={<Prayers />}></Route> */}
         {/* <Route path="registration-form" element={<RegistrationForm />}></Route> */}
         {/* <Route path="transportation" element={<Transportation />}></Route> */}
