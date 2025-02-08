@@ -18,17 +18,17 @@ const Hero = ({ heroData }) => {
         className="flex flex-col justify-center py-14 md:pr-16 xl:pr-40 md:py-0"
       >
         <div className="space-y-6 text-center md:text-left">
-          {/* <h2 className="text-2xl md:text-3xl font-extrabold leading-tight text-gradient bg-gradient-to-r from-blue-500 to-indigo-600 text-transparent bg-clip-text">
+          <h2 className="text-2xl md:text-3xl font-extrabold leading-tight text-gradient bg-gradient-to-r from-blue-500 to-indigo-600 text-transparent bg-clip-text">
             {heroData.title}
-          </h2> */}
-          <motion.p
+          </h2>
+          {/* <motion.p
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="text-2xl md:text-3xl font-extrabold leading-tight text-gradient bg-gradient-to-r from-blue-500 to-indigo-600 text-transparent bg-clip-text"
           >
             {heroData.title}
-          </motion.p>
+          </motion.p> */}
           <p className="text-lg md:text-xl text-gray-500 font-light italic leading-relaxed">
             Established in 1966, an English medium school in Nehru Nagar, Delhi, stands at Ring Road, Nehru Nagar, Delhi - 110065, nurturing young minds with excellence.
           </p>
