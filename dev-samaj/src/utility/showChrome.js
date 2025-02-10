@@ -1,6 +1,8 @@
 export const showPublicChrome = (path) => {
-  console.log("path------->", path);
-  if (path == "/login") return false;
+  if (path.includes("/school-management")) {
+    // Code to execute if path includes "dashboard"
+  }
+  if (path == "/login" || path.includes("/school-management")) return false;
 
   return true;
 };

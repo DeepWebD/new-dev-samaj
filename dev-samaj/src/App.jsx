@@ -33,8 +33,11 @@ import Houses from "./Pages/Houses/Houses";
 import Prayers from "./Pages/Prayers/Prayers";
 import AppLayout from "./Layout/AppLayout";
 import Dashboard from "./Pages/SchoolManagement/Dashboard";
+
 // Lazy load the Login component
 const Login = lazy(() => import("./Pages/Login/Login"));
+const Students = lazy(() => import("./Pages/SchoolManagement/Students"));
+const Teachers = lazy(() => import("./Pages/SchoolManagement/Teachers"));
 
 const App = () => {
   const router = createBrowserRouter(
@@ -68,6 +71,22 @@ const App = () => {
             element={
               <Suspense fallback={<div>Loading...</div>}>
                 <Dashboard />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="students"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Students />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="teachers"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Teachers />
               </Suspense>
             }
           ></Route>

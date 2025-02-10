@@ -6,9 +6,17 @@ function Sidebar({ open }) {
   const location = useLocation();
 
   const links = [
-    { name: "Dashboard", icon: LayoutDashboard, path: "/" },
-    { name: "Students", icon: GraduationCap, path: "/students" },
-    { name: "Teachers", icon: Users, path: "/teachers" },
+    {
+      name: "Dashboard",
+      icon: LayoutDashboard,
+      path: "/school-management/dashboard",
+    },
+    {
+      name: "Students",
+      icon: GraduationCap,
+      path: "/school-management/students",
+    },
+    { name: "Teachers", icon: Users, path: "/school-management/teachers" },
     { name: "Logout", icon: Users, path: "/logout" },
   ];
 
