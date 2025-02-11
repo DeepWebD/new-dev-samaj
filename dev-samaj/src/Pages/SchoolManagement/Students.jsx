@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { Plus, Pencil, Trash2 } from "lucide-react";
+import { Plus } from "lucide-react";
+
+import Table from "../../components/SchoolManagement/Table";
 
 function Students() {
   const [students, setStudents] = useState([
@@ -13,6 +15,8 @@ function Students() {
     },
     // Add more sample data as needed
   ]);
+
+  const tableHeadTitle = ["Name", "Class", "Roll No", "Gender", "Actions"];
 
   return (
     <div className="bg-white dark:bg-gray-800 shadow rounded-lg">
@@ -28,7 +32,8 @@ function Students() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+          <Table tableData={students} tableHeadTitle={tableHeadTitle} />
+          {/* <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
             <thead>
               <tr>
                 <th className="px-6 py-3 bg-gray-50 dark:bg-gray-700 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
@@ -74,7 +79,7 @@ function Students() {
                 </tr>
               ))}
             </tbody>
-          </table>
+          </table> */}
         </div>
       </div>
     </div>

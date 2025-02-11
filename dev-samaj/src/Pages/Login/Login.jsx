@@ -3,21 +3,30 @@ import { LogIn } from "lucide-react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectNavConfig } from "../../store/reducers/uiSlice";
 import { useNavigate } from "react-router-dom";
+import { getSidebarLinks } from "./util";
 import {
   setIsLoggedIn,
   setUserRole,
   selectIsLoggedIn,
 } from "../../store/reducers/authSlice";
+
+import { setSchoolManagementSidebar } from "../../store/reducers/uiSlice";
+import { USER_ROLE } from "../../constant";
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const navConfig = useSelector(selectNavConfig);
-  const [userType, setUserType] = useState("");
+  const [userType, setUserType] = useState(USER_ROLE.MASTER_ADMIN);
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigate("/school-management/dashboard");
+      if (userType == USER_ROLE.STUDENT) {
+        navigate("/school-management/student/assignments");
+      } else {
+        navigate("/school-management/dashboard");
+      }
     }
   }, [isLoggedIn]);
 
@@ -26,6 +35,7 @@ const Login = () => {
 
     dispatch(setIsLoggedIn(true));
     dispatch(setUserRole(userType));
+    dispatch(setSchoolManagementSidebar(getSidebarLinks(userType)));
   };
 
   console.log("selectNavConfig", navConfig);
@@ -74,10 +84,10 @@ const Login = () => {
                   required
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
                 >
-                  <option value="master_admnin">Master Admin </option>
-                  <option value="Admin">Admin </option>
-                  <option value="Student">Student </option>
-                  <option value="Teacher">Teacher</option>
+                  <option value={USER_ROLE.MASTER_ADMIN}>Master Admin </option>
+                  <option value={USER_ROLE.ADMIN}>Admin </option>
+                  <option value={USER_ROLE.STUDENT}>Student </option>
+                  <option value={USER_ROLE.TEACHER}>Teacher</option>
                 </select>
               </div>
             </div>

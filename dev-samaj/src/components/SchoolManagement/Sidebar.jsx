@@ -1,10 +1,17 @@
 /* eslint-disable react/prop-types */
 import { Link, useLocation } from "react-router-dom";
-import { LayoutDashboard, Users, GraduationCap, LogOut } from "lucide-react";
+import { LayoutDashboard, Users, GraduationCap } from "lucide-react";
+import { useSelector } from "react-redux";
+import { selectUserRole } from "../../store/reducers/authSlice";
+import { selectSchoolManagementSidebar } from "../../store/reducers/uiSlice";
 
 function Sidebar({ open }) {
   const location = useLocation();
+  const userRole = useSelector(selectUserRole);
+  const sideBarLinks = useSelector(selectSchoolManagementSidebar);
 
+  console.log("userRole------->", userRole);
+  console.log("sideBarLinks----->", sideBarLinks);
   const links = [
     {
       name: "Dashboard",
@@ -29,7 +36,7 @@ function Sidebar({ open }) {
       <div className="h-full bg-white dark:bg-gray-800 shadow-lg">
         <nav className="mt-5 px-2">
           <div className="space-y-1">
-            {links.map((link) => {
+            {sideBarLinks.map((link) => {
               const Icon = link.icon;
               return (
                 <Link

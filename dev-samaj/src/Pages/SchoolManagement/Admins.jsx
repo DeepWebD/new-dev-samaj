@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Plus, Pencil, Trash2 } from "lucide-react";
 import Table from "../../components/SchoolManagement/Table";
 
-function Teachers() {
-  const [teachers, setTeachers] = useState([
+function Admins() {
+  const [admins, setAdmins] = useState([
     {
       id: 1,
       name: "Dr. Robert Brown",
@@ -43,11 +43,11 @@ function Teachers() {
         </div>
 
         <div className="overflow-x-auto">
-          <Table tableData={teachers} tableHeadTitle={tableHeadTitle} />
+          <Table tableData={admins} tableHeadTitle={tableHeadTitle} />
         </div>
       </div>
     </div>
   );
 }
 
-export default Teachers;
+export default Admins;

@@ -22,5 +22,6 @@ export const { setIsLoggedIn, setUserRole } = authSlice.actions;
 
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectUserRole = (state) => state.auth.userRole;
+export const selectIsAuthenticated = (state) => state.auth.isLoggedIn;
 
 export default authSlice.reducer;

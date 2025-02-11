@@ -7,21 +7,14 @@ import {
   createRoutesFromElements,
   RouterProvider,
 } from "react-router-dom";
-import Image from "./Pages/Image";
 import NotFound from "./Pages/NotFound";
-import VideoGallery from "./Pages/VideoGallery";
 import AboutUs from "./Pages/AboutUs";
 import Admission from "./Pages/Admission";
-import AdmissionCriteria from "./Pages/AdmissionCriteria";
-import Courses from "./Pages/Courses";
 import ExtraCarriculum from "./Pages/ExtraCarriculum";
 import Facilities from "./Pages/Facilities";
 import History from "./Pages/History";
 import Mpd from "./Pages/Mpd";
-import PastEvents from "./Pages/PastEvents";
-import RegistrationForm from "./Pages/RegistrationForm";
-import Transportation from "./Pages/Transportation";
-import UpcomingEvent from "./Pages/UpcomingEvent";
+
 import UiContextProvider from "./context/UiContext";
 import store from "./store/store";
 import { Provider } from "react-redux";
@@ -33,11 +26,19 @@ import Houses from "./Pages/Houses/Houses";
 import Prayers from "./Pages/Prayers/Prayers";
 import AppLayout from "./Layout/AppLayout";
 import Dashboard from "./Pages/SchoolManagement/Dashboard";
+import Assignment from "./Pages/SchoolManagement/Teacher/Assignment";
 
 // Lazy load the Login component
 const Login = lazy(() => import("./Pages/Login/Login"));
 const Students = lazy(() => import("./Pages/SchoolManagement/Students"));
 const Teachers = lazy(() => import("./Pages/SchoolManagement/Teachers"));
+const Admins = lazy(() => import("./Pages/SchoolManagement/Admins"));
+const StudentAssignments = lazy(() =>
+  import("./Pages/SchoolManagement/Student/StudentAssignments")
+);
+const StudentResults = lazy(() =>
+  import("./Pages/SchoolManagement/Student/StudentResults")
+);
 
 const App = () => {
   const router = createBrowserRouter(
@@ -47,15 +48,10 @@ const App = () => {
         <Route path="images" element={<ImageGallery />}></Route>
         <Route path="about-devSamaj" element={<AboutUs />}></Route>
         <Route path="admission" element={<Admission />}></Route>
-        {/* <Route
-          path="registration-criteria"
-          element={<AdmissionCriteria />}
-        ></Route> */}
         <Route path="pre-primary" element={<Academics />}></Route>
         <Route path="lower-school" element={<Academics />}></Route>
         <Route path="middle-school" element={<Academics />}></Route>
         <Route path="high-school" element={<Academics />}></Route>
-        {/* <Route path="video-gellery" element={<ExtraCarriculum />}></Route> */}
         <Route path="facilities" element={<Facilities />}></Route>
         <Route path="history" element={<History />}></Route>
         <Route path="mandatory" element={<Mpd />}></Route>
@@ -65,6 +61,7 @@ const App = () => {
         <Route path="houses" element={<Houses />}></Route>
         <Route path="prayers" element={<Prayers />}></Route>
         <Route path="login" element={<Login />}></Route>
+
         <Route path="school-management/" element={<AppLayout />}>
           <Route
             path="dashboard"
@@ -90,12 +87,40 @@ const App = () => {
               </Suspense>
             }
           ></Route>
+          <Route
+            path="admins"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Admins />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="assigments"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Assignment />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="student/assignments"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <StudentAssignments />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="student/results"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <StudentResults />
+              </Suspense>
+            }
+          ></Route>
         </Route>
 
-        {/* <Route path="images" element={<Prayers />}></Route> */}
-        {/* <Route path="registration-form" element={<RegistrationForm />}></Route> */}
-        {/* <Route path="transportation" element={<Transportation />}></Route> */}
-        {/* <Route path="upcomingEvents" element={<UpcomingEvent />}></Route> */}
         <Route path="*" element={<NotFound />} />
       </Route>
     )
