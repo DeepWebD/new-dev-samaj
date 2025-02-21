@@ -136,7 +136,7 @@ const TeacherSlider = ({ sliderData }) => {
                         <p>Hindi Teacher</p>
                       </div>
                       <div>
-                        <button className="bg-primary px-4 py-2 rounded scale-100 shadow-sm hover:shadow-md hover:scale-110 transition-all delay-100">
+                      <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition-all">
                           See More
                         </button>
                       </div>
@@ -151,13 +151,13 @@ const TeacherSlider = ({ sliderData }) => {
           <div className="flex justify-center items-center gap-4 mt-8">
             <button
               onClick={previous}
-              className="w-12 h-12 rounded-full bg-orange-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors"
+              className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors"
             >
               ←
             </button>
             <button
               onClick={next}
-              className="w-12 h-12 rounded-full bg-orange-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors"
+              className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-orange-700 transition-colors"
             >
               →
             </button>

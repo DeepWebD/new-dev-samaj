@@ -30,7 +30,7 @@ const Hero = ({ heroData }) => {
             {heroData.title}
           </motion.p> */}
           <p className="text-lg md:text-xl text-gray-500 font-light italic leading-relaxed">
-            Established in 1966, an English medium school in Nehru Nagar, Delhi, stands at Ring Road, Nehru Nagar, Delhi - 110065, nurturing young minds with excellence.
+            Established in 1966, An English medium school in Nehru Nagar , Delhi, stands at Ring Road, Nehru Nagar, Delhi - 110065, nurturing young minds with excellence.
           </p>
           <p className="text-lg md:text-xl text-gray-500 font-light italic leading-relaxed">
             The name "Dev Samaj" also honors a legacy of social reform, founded in Lahore in 1887 by Pandit Shiv Narayan Agnihotri.

@@ -86,7 +86,7 @@ const AboutUs = () => {
         </div>
       </div>
       {/* Mission Body */}
-      <div className="flex justify-center items-center py-20 my-20 bg-primary w-[100vw]">
+      <div className="flex justify-center items-center py-20 my-20 bg-blue-700 transition-all">
         <p className="text-3xl mx-auto max-w-3xl text-center font-thin text-white">
           Wesleyan’s mission is to be a Christian school of academic excellence
           by providing each student a diverse college preparatory education
@@ -166,7 +166,7 @@ const AboutUs = () => {
       </div>
 
       {/* Mission Body */}
-      <div className="flex justify-center text-center items-center py-20 my-20 bg-primary w-[100vw]">
+      <div className="flex justify-center text-center items-center py-20 my-20 bg-blue-700 transition-all">
         <p className="text-3xl mx-auto max-w-xl text-center font-thin text-white">
           "The earth is the Lord's, and the fulness thereof; the world, and they
           that dwell therein." Psalm 24:1

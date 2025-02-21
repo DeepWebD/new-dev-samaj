@@ -43,7 +43,9 @@ const Banner = ({ subtitle, tag, reverse }) => {
               whileInView={"visible"}
               className="flex justify-center md:justify-start"
             >
-              <button className="primary-btn !mt-5">See More</button>
+              <button className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition-all">
+              See More
+              </button>
             </motion.div>
           </div>
         </div>

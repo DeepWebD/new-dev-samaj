@@ -42,14 +42,14 @@ const Transport = () => {
             <div key={index} className="p-2 sm:w-1/2 w-full">
               <div className="flex justify-between bg-gray-100 items-center h-full rounded pr-6">
                 <div className=" flex p-4  items-center gap-4">
-                  <FaRoute className="text-primary" />
+                  <FaRoute className="text-blue-600" />
                   <span className="font-medium">{item}</span>
                 </div>
                 <div>
                   <a
                     href=""
                     onClick={(e) => openModal(e)}
-                    className="text-primary font-bold"
+                    className="text-blue-600 font-bold"
                   >
                     See Route
                   </a>

@@ -49,7 +49,7 @@ const Canteen = () => {
           {canteenFeatures.map((feature) => {
             return (
               <div key={feature.id} className="w-full sm:w-1/2 mb-4 px-2 ">
-                <div className="h-full py-4 px-6 border border-primary border-t-0 border-l-0 rounded-br-xl">
+                <div className="h-full py-4 px-6 border border-blue-600 border-t-0 border-l-0 rounded-br-xl">
                   <h3 className="text-2xl font-bold text-md mb-6">
                     {feature.title}
                   </h3>

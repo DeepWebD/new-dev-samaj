@@ -42,13 +42,16 @@ const NavcardContent = (props) => {
         <div className=" mt-5 mr-5 pt-0 text-lg font-light">{desc}</div>
         <div>
           {id == "registration-criteria" || id == "registration-form" ? (
-            <button onClick={(e) => downloadPDF(e, id)} className="primary-btn">
+            <button
+              onClick={(e) => downloadPDF(e, id)}
+              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition-all"
+            >
               Download
             </button>
           ) : (
             <button
               onClick={(e) => handleRedirect(e, id)}
-              className="primary-btn"
+              className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 transition-all"
             >
               Learn More
             </button>

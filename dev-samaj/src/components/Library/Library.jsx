@@ -30,7 +30,7 @@ const Library = () => {
             <div key={index} className="p-2 sm:w-1/2 w-full">
               <div className="flex justify-between bg-gray-100 items-center h-full rounded">
                 <div className=" flex p-4  items-center gap-4">
-                  <FaBook className="text-primary" />
+                  <FaBook className="text-blue-600" />
                   <span className="font-medium">{item}</span>
                 </div>
               </div>
